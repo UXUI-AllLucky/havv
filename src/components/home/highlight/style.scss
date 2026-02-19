@@ -1,0 +1,316 @@
+.highlight-section {
+  padding: 5vw 0 5vw 3.3333vw;
+  background-color: #151515;
+  color: white;
+  overflow-x: hidden;
+  /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%;
+  /* 너비를 화면에 딱 맞게 고정 */
+
+  .highlight-title {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 1.6667vw;
+    margin-right: 0.5208vw;
+
+    h4 {
+      /* Intentionally empty or remove if not needed */
+    }
+
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2083vw;
+      font-weight: 600;
+      font-size: 1.4583vw;
+      color: #a3a3a3;
+      cursor: pointer;
+
+      img {
+        width: 1.25vw;
+        height: 1.25vw;
+      }
+    }
+  }
+
+  .highlight-container {
+    background-color: none;
+    height: auto;
+    width: 100%;
+    padding-right: 3.3333vw;
+    flex-wrap: nowrap;
+    display: flex;
+    gap: 1.0417vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    ::-webkit-scrollbar {
+      display: none;
+      /* 크롬, 사파리 스크롤바 숨기기 */
+    }
+
+    .hightlight-card {
+      position: relative;
+      height: auto;
+      width: 17.3958vw;
+      flex-shrink: 0;
+      transition: transform 0.5s ease;
+      cursor: pointer;
+
+      .thumb {
+        gap: 1.0938vw;
+
+        .img-box {
+          position: relative;
+          width: 100%;
+          height: 11.0417vw;
+          margin-bottom: 1.0938vw;
+          border-radius: 0.625vw;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            transition: transform 0.5s ease;
+          }
+
+          .time {
+            display: flex;
+            padding: 0.2083vw;
+            gap: 0.2083vw;
+            align-items: center;
+            position: absolute;
+            bottom: 0.4167vw;
+            right: 0.3646vw;
+            z-index: 2;
+            font-size: 0.7292vw;
+            line-height: 0.8854vw;
+            font-weight: 400;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 0.2083vw;
+            box-sizing: border-box;
+            border-radius: 0.2083vw;
+
+            .playIcon {
+              width: 0.7292vw;
+              height: 0.7292vw;
+            }
+          }
+        }
+
+        &:hover {
+          .img-box img {
+            transform: scale(1.05); // ✅ 적당한 배율로 확대
+          }
+        }
+
+        .highlight-text {
+          padding-right: 0.2083vw;
+          gap: 0.1563vw;
+
+          strong {
+            line-height: 1.2;
+            font-size: 1.0417vw;
+            color: #fff;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.5556vw;
+
+          }
+
+          p {
+            line-height: 0.8854vw;
+            font-size: 0.7292vw;
+            color: #e6e6e6;
+            font-weight: 400;
+            word-break: keep-all;
+          }
+        }
+
+        .highlight_date {
+          font-weight: 400;
+          font-size: 0.7292vw;
+          color: #7f7f7f;
+        }
+      }
+    }
+  }
+
+  /* Detail Page Specific Styles */
+  &.detail-type {
+    background-color: transparent;
+    position: relative;
+
+    .highlight-section {
+      background-color: transparent;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+
+    }
+
+
+    .highlight-title {
+      font-size: 2.5vw;
+    }
+
+    .highlight-container {
+      height: 18vw;
+
+      .hightlight-card {
+        width: 17vw;
+        height: 18vw;
+
+        .thumb {
+          .img-box {
+            height: 11vw;
+          }
+
+          .highlight-text {
+            gap: 1vw;
+
+            strong {
+              font-size: 1.1vw;
+
+            }
+
+            p {
+              font-size: 0.8vw;
+            }
+
+            .highlight_date {
+              font-size: 0.8vw;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .highlight-section {
+    padding: 8.3333vw 0 11.1111vw 4.4444vw;
+
+    .highlight-title {
+      margin-bottom: 4.4444vw;
+      padding: 3.3333vw 4.4444vw 3.6111vw 0;
+
+      h4 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 6.6667vw;
+        font-size: 5.5556vw;
+      }
+
+      .more {
+        gap: 0.5556vw;
+        font-size: 3.8889vw;
+        color: #a3a3a3;
+
+        img {
+          width: 4.4444vw;
+          height: 4.4444vw;
+        }
+      }
+    }
+
+    .highlight-container {
+      height: auto;
+      padding-right: 4.4444vw;
+      gap: 4.4444vw;
+
+      /* ⭐ 중요: .hightlight-card를 이 안으로 이동시켜야 우선순위가 맞습니다 */
+      .hightlight-card {
+        height: auto;
+        width: 70vw;
+        /* 이제 이 너비가 정상 적용됩니다 */
+
+        .thumb {
+          gap: 3.3333vw;
+
+          .img-box {
+            height: 44.4444vw;
+            margin-bottom: 3.3333vw;
+            border-radius: 1.1111vw;
+
+            .time {
+              padding: 1.1111vw;
+              gap: 0.5556vw;
+              bottom: 2.2222vw;
+              right: 3.3333vw;
+              font-size: 3.3333vw;
+              border-radius: 0.5556vw;
+
+              .playIcon {
+                width: 3.3333vw;
+                height: 3.3333vw;
+              }
+            }
+          }
+
+          .highlight-text {
+            padding-right: 0.2083vw;
+
+            /* ✅ 중요: gap이 먹히도록 flex 설정 추가 */
+            display: flex;
+            flex-direction: column;
+            gap: 0.5556vw;
+            /* 간격도 조금 더 넉넉하게 조정 */
+
+            strong {
+              /* height: 5.2778vw;  ❌ 고정 높이 제거 (글자가 많으면 잘리거나 겹침) */
+
+              font-size: 4.1667vw;
+              font-weight: 700;
+
+              /* ✅ 중요: 폰트 크기에 맞는 줄 간격 설정 (보통 1.3~1.4배) */
+              line-height: 1.3;
+
+              /* (선택사항) 제목이 너무 길 경우 말줄임표 처리하려면 아래 주석 해제 */
+            }
+
+            p {
+              /* height: 9.7222vw; ❌ 고정 높이 제거 */
+
+              font-size: 3.8889vw;
+
+              /* ✅ 중요: 본문 줄 간격 확보 */
+              line-height: 1.2;
+
+              color: #e6e6e6;
+              /* 가독성을 위해 색상 재확인 */
+
+              display: -webkit-box;
+              -webkit-line-clamp: 2;
+              line-clamp: 2;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+            }
+          }
+
+          .highlight_date {
+            font-size: 3.8889vw;
+          }
+        }
+      }
+
+      /* .hightlight-card 닫기 */
+    }
+
+    /* .highlight-container 닫기 */
+  }
+}

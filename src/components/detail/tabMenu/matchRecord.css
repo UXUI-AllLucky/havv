@@ -1,0 +1,28 @@
+/* MatchRecord 컨테이너 */
+.match-record-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding-bottom: 50px;
+}
+
+/* 개별 세트 블록 */
+.record-set-block {
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+/* 세트 타이틀 (SET 1, SET 2...) */
+.record-set-title {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding-left: 10px;
+    /* 포인트 컬러 */
+}
+
+/* 스코어 카드 크기 제한 (Point 컴포넌트와 통일감) */
+.match-record-container .score-card {
+    max-width: 900px;
+    margin: 0 auto;
+}

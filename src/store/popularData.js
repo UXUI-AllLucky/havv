@@ -1,0 +1,42 @@
+export const popularData = [
+    {
+        id: 'z6E5uFYuPF8',
+        title: '[MLS컵] 오스틴 vs LAFC',
+        subTitle: '손흥민 득점 경기 하이라이트',
+        img: '/images/mostPopular/most-popular1.jpg',
+        date: '11.03',
+        time: '10:30',
+    },
+    {
+        id: 'hj8mmCibbeg',
+        title: '[한국시리즈] LG vs 한화',
+        subTitle: '폰세 하이라이트',
+        img: '/images/mostPopular/most-popular2.jpg',
+        date: '10.31',
+        time: '08:30',
+    },
+    {
+        id: 'tKg81nVeoUI',
+        title: '[국가대표 친선경기] 대한민국vs 파라과이',
+        subTitle: '이강인 하이라이트',
+        img: '/images/mostPopular/most-popular3.jpg',
+        date: '10.22',
+        time: '06:57',
+    },
+    {
+        id: '3mDL2bk7x7o',
+        title: '[챔피언스 리그] PSG vs 스트라스부르',
+        subTitle: '이강인 하이라이트',
+        img: '/images/mostPopular/most-popular4.jpg',
+        date: '10.27',
+        time: '05:23',
+    },
+    {
+        id: 'Zug84OjKR0A',
+        title: '[세계 배드민턴 선수권 대회]',
+        subTitle: '안세영 vs 왕즈이 하이라이트',
+        img: '/images/mostPopular/most-popular5.jpg',
+        date: '10.27',
+        time: '04:49',
+    },
+];

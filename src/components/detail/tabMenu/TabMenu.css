@@ -1,0 +1,34 @@
+.tab-menu {
+    display: flex;
+    gap: 40px;
+    border-bottom: 1px solid #333; /* 전체 하단선 */
+    padding-left: 20px;
+}
+
+.tab-menu button {
+    background: none;
+    border: none;
+    color: #888; /* 비활성 상태 색상 */
+    padding: 15px 5px;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+}
+
+/* 활성화된 버튼 스타일 (active 클래스가 붙었을 때) */
+.tab-menu button.active {
+    color: #fff; /* 활성 상태 흰색 */
+    font-weight: bold;
+}
+
+/* 활성화된 버튼 아래에 흰색 두꺼운 선 추가 */
+.tab-menu button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px; /* 부모 border-bottom과 겹치게 */
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+}

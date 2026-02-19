@@ -1,0 +1,138 @@
+@charset "UTF-8";
+.footer-container {
+  background-color: #151515;
+  width: 100%;
+  padding: 5vw 3.3333vw;
+}
+
+/* 상단 영역 (메뉴 + 소셜) */
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.6042vw;
+}
+.footer-top .footer-nav {
+  width: 27.6042vw;
+  display: flex;
+  justify-content: space-between;
+}
+.footer-top .footer-nav a {
+  font-size: 0.7292vw;
+  font-weight: 400;
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+.footer-top .footer-social a {
+  color: rgba(255, 255, 255, 0.4);
+  width: 1.25vw;
+  height: 1.25vw;
+  margin-left: 0.625vw;
+  transition: color 0.3s;
+}
+.footer-top .footer-social a img {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+
+/* 하단 정보 영역 */
+.footer-info {
+  color: #a3a3a3;
+  font-size: 0.625vw;
+  font-weight: 400;
+}
+.footer-info .info-row {
+  margin-bottom: 0.8854vw;
+}
+.footer-info .info-row .divider {
+  margin: 0 0.4688vw;
+  color: rgba(255, 255, 255, 0.2);
+  vertical-align: middle;
+}
+.footer-info .info-row .link-underline {
+  color: #ebebeb;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@media (max-width: 360px) {
+  .footer-container {
+    width: 100%;
+    padding: 5.5556vw 4.4444vw;
+    position: relative;
+  }
+  .footer-top {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 9.1667vw;
+    width: 100%;
+    /* 메뉴 영역 수정: 왼쪽 정렬 + 고정 간격 */
+    /* 소셜 아이콘 */
+  }
+  .footer-top .footer-nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; /* 양끝 정렬 해제 */
+    row-gap: 2.2222vw;
+    -moz-column-gap: 4.4444vw;
+         column-gap: 4.4444vw;
+  }
+  .footer-top .footer-nav a {
+    font-size: 3.8889vw;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+  .footer-top .footer-social {
+    position: absolute;
+    bottom: 12.7778vw; /* 저작권 위 68px */
+    left: 5.5556vw;
+    display: flex;
+  }
+  .footer-top .footer-social a {
+    width: 6.6667vw;
+    height: 6.6667vw;
+    margin-right: 3.3333vw;
+  }
+  .footer-top .footer-social a img {
+    width: 100%;
+    height: 100%;
+    display: block;
+  }
+  /* 하단 정보 영역 */
+  .footer-info {
+    font-size: 3.3333vw;
+    line-height: 1.2;
+  }
+  .footer-info .info-text-group {
+    margin-bottom: 6.6667vw; /* 텍스트와 버튼 사이 간격 24px */
+  }
+  .footer-info .info-row {
+    margin-bottom: 1.1111vw;
+    display: block;
+  }
+  .footer-info .info-row span {
+    display: inline-block;
+  }
+  .footer-info .info-row .divider {
+    margin: 0 1.6667vw;
+  }
+  .footer-info .footer-buttons {
+    display: flex;
+    gap: 4.4444vw;
+  }
+  .footer-info .footer-buttons .link-underline {
+    font-size: 3.3333vw;
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  .footer-info .copyright {
+    color: #7f7f7f;
+    margin-top: 19.1667vw;
+    font-size: 3.3333vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */

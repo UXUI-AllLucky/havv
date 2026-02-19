@@ -1,0 +1,217 @@
+.my-sports {
+    background-color: #151515;
+    padding: 5vw 0 5vw 3.3333vw;
+    overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+    width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+    box-sizing: border-box;
+}
+
+.my-sports h4 {
+    height: 4.0104vw;
+    line-height: 2.9688vw;
+    color: #fff;
+    padding: 0.5208vw 0;
+    margin-bottom: 1.6667vw;
+}
+
+/* 탭 버튼 스타일 */
+.tab-menu {
+    display: flex;
+    align-items: center;
+}
+
+.tab-menu button {
+    box-sizing: border-box;
+    width: 4.5313vw;
+    padding: 0.5208vw 0.2604vw;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    margin-bottom: 1.6667vw;
+}
+.tab-menu button p {
+    font-size: 1.0417vw;
+    font-weight: 600;
+    justify-content: center;
+    color: #7f7f7f;
+    display: block;
+    width: 4.0104vw;
+    
+}
+
+.tab-menu button.active {
+    color: var(--color-white);
+}
+.tab-menu button.active p {
+    color: #fff;
+}
+.tab-menu button.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    
+    border-bottom: 0.2604vw solid var(--solid-wh-wh_100, #fff);
+}
+
+/* 가로 스크롤 영역 핵심 */
+.sports-list-container {
+    width: 100%;
+    max-width: calc(100vw - 3.3333vw); /* ⭐ 화면 전체에서 왼쪽 패딩(3.3333vw)만큼 뺀 너비로 고정 */
+    padding-right: 3.3333vw;
+    overflow-x: auto;
+    overflow-y: hidden; /* ⭐ 세로 스크롤을 강제로 차단 */
+    cursor: grab;
+    user-select: none; /* ⭐ 드래그 시 텍스트 선택 방지 */
+    -webkit-user-drag: none; /* ⭐ 이미지 드래그 방지 */
+}
+.sports-list-container:active {
+    cursor: grabbing;
+}
+
+.sports-list-container::-webkit-scrollbar {
+    display: none; /* 크롬/사파리 스크롤바 숨김 */
+}
+
+.sports-list {
+    display: inline-flex; /* ⭐ 내부 아이템만큼만 너비를 가지되 가로로 나열 */
+    flex-wrap: nowrap;
+    gap: 0.2083vw;
+}
+
+.sports-item {
+    flex-shrink: 0; /* ⭐ 절대로 크기가 줄어들지 않게 고정 */
+    text-align: center;
+    width: 10.9375vw;
+    height: 11.6667vw;
+    cursor: pointer;
+}
+
+.sports-item .img-box {
+    position: relative;
+    width: 7.2917vw;
+    height: 7.2917vw;
+    margin: 0 auto;
+}
+
+.sports-item .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    pointer-events: none; /* ⭐ 이미지가 마우스 이벤트를 가로채지 않게 설정 */
+}
+
+/* 라이브 표시 빨간 점 */
+.live-dot {
+    position: absolute;
+    right: 0.3646vw;
+    top: 0.7292vw;
+    width: 0.8854vw;
+    height: 0.8854vw;
+    background: var(--color-accent);
+    border-radius: 50%;
+}
+
+.sports-item .text-box strong {
+    margin-top: 1.0417vw;
+    display: block;
+    font-size: 1.4583vw;
+    line-height: 1.7188vw;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 0.2604vw;
+}
+
+.sports-item .text-box span {
+    font-size: 1.1458vw;
+    color: #7f7f7f;
+    font-weight: 600;
+    letter-spacing: -0.1042vw;
+}
+
+
+@media (max-width: 360px) {
+   .my-sports {
+  padding: 11.1111vw 0 8.3333vw 4.4444vw;
+
+}
+
+.my-sports h4 {
+    font-weight: 700;
+   font-size: 5.5556vw;
+    padding: 2.5000vw 0;
+    margin-bottom: 1.1111vw
+}
+
+/* 탭 버튼 스타일 */
+
+
+.tab-menu button {
+    display: flex;
+    justify-content: center;
+       width: 16.6667vw;
+    padding: 1.1111vw;
+    margin-bottom: 2.5000vw;
+    margin-top: 3.3333vw;
+}
+.tab-menu button p {
+     font-size:3.8889vw;
+    font-weight: 700;
+  width: 16.6667vw;
+    margin-right: 0.2778vw;
+}
+
+
+
+.tab-menu button.active::after {
+
+    border-bottom:  0.5556vw solid var(--solid-wh-wh_100, #fff);
+}
+
+/* 가로 스크롤 영역 핵심 */
+.sports-list-container {
+    max-width: calc(100vw - 4.4444vw); /* ⭐ 화면 전체에서 왼쪽 패딩(3.3333vw)만큼 뺀 너비로 고정 */
+   padding-right: 4.4444vw;
+}
+
+
+.sports-list {
+  
+     gap: 1.1111vw;
+}
+
+.sports-item {
+     width: 38.8889vw;
+    height: 28.0556vw;
+}
+
+.sports-item .img-box {
+    width: 19.4444vw;
+    height: 19.7222vw;
+}
+
+/* 라이브 표시 빨간 점 */
+.live-dot {
+
+     right: 0.3646vw;
+    top: 0.7292vw;
+    width: 2.2222vw;
+    height: 2.2222vw;
+ 
+}
+
+.sports-item .text-box strong {
+    margin-top: 1.3889vw;
+    font-size: 4.4444vw;
+    margin-bottom: 0.2778vw;
+
+}
+
+.sports-item .text-box span {
+    font-size:3.8889vw;
+}
+
+
+}

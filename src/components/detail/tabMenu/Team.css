@@ -1,0 +1,236 @@
+/* src/components/detail/tabMenu/Team.css */
+
+.team-container {
+    background-color: #0a0a0a;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.team-content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: flex-start;
+}
+
+.team-side {
+    flex: 1;
+    background-color: #0a0a0a;
+}
+
+.team-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    border-bottom: 2px solid #333;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+}
+
+.team-flag-img {
+    width: 200px;
+    height: 135px;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+.team-vs-text {
+    font-size: 32px;
+    font-weight: bold;
+    color: #1a1a1a;
+    align-self: center;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 1024px) {
+    .team-content-wrapper {
+        flex-direction: column;
+        /* 세로 스택 */
+        align-items: stretch;
+        gap: 50px;
+    }
+
+    .team-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .team-flag-img {
+        width: 150px;
+        height: 100px;
+    }
+
+    .team-vs-text {
+        color: #fff;
+        /* 모바일에서는 배경이 어두우므로 잘 보이게 */
+        margin: 20px 0;
+        text-align: center;
+    }
+
+    margin: 20px 0;
+    text-align: center;
+}
+}
+
+/* =========================================
+   PlayerRow 및 내부 요소 스타일 (Inline -> CSS)
+   ========================================= */
+.player-row {
+    display: flex;
+    align-items: flex-start;
+    padding: 30px 40px;
+    gap: 25px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 1px solid #333;
+}
+
+.player-row.last-row {
+    border-bottom: none;
+}
+
+.player-image {
+    width: 105px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.player-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.player-info-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.player-name-rank {
+    flex-shrink: 0;
+    width: 120px;
+}
+
+.player-name-rank .name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 6px;
+}
+
+.player-name-rank .age {
+    font-size: 13px;
+    font-weight: normal;
+    color: #aaa;
+}
+
+.player-name-rank .rank {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.player-achievements {
+    text-align: left;
+}
+
+.achieve-label {
+    color: #888;
+    font-size: 11px;
+    margin-bottom: 4px;
+    font-weight: bold;
+}
+
+.achieve-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    align-items: flex-start;
+}
+
+.achieve-item {
+    font-size: 11px;
+    color: #ddd;
+    white-space: nowrap;
+}
+
+.player-stats-grid {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+/* =========================================
+   모바일 추가 오버라이드 (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    .team-container {
+        padding: 20px 10px;
+        /* 전체 패딩 축소 */
+    }
+
+    /* Player Row 스택킹 */
+    .player-row {
+        flex-direction: column;
+        /* 이미지 위, 정보 아래 */
+        align-items: center;
+        /* 중앙 정렬 */
+        padding: 20px;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .player-image {
+        width: 80px;
+        /* 이미지 축소 */
+        height: 100px;
+    }
+
+    .player-info {
+        width: 100%;
+    }
+
+    .player-info-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    .player-name-rank {
+        width: auto;
+        text-align: center;
+    }
+
+    .player-achievements {
+        text-align: center;
+    }
+
+    .achieve-list {
+        align-items: center;
+    }
+
+    .achieve-item {
+        white-space: normal;
+        /* 모바일에서 텍스트 줄바꿈 허용 */
+        word-break: keep-all;
+    }
+
+    /* 그래프 영역 */
+    .player-stats-grid {
+        justify-content: center;
+        flex-wrap: wrap;
+        /* 그래프가 넘치면 다음 줄로 */
+        gap: 15px;
+    }
+}

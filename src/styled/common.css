@@ -1,0 +1,9 @@
+/* 전체 공통부분만  */
+.header {
+    width: 100%;
+}
+.inner {
+    margin: auto;
+    position: relative;
+    box-sizing: border-box;
+}

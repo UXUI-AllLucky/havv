@@ -1,0 +1,282 @@
+.player-intro-wrap {
+    width: 100%;
+    max-width: 1200px;
+    /* PC 화면에서 너무 퍼지지 않게 제한 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
+    color: #fff;
+    padding: 20px 0;
+}
+
+.matchup-row {
+    margin-bottom: 60px;
+    /* 각 매치업 사이 간격 */
+    border-bottom: 1px solid #333;
+    padding-bottom: 40px;
+}
+
+.matchup-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.content-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff;
+    /* 골드 컬러 포인트 */
+}
+
+/* 3분할 그리드: 왼쪽 선수 - 중앙 라벨 - 오른쪽 선수 */
+.compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 200px 1fr;
+    /* 중앙 라벨 영역 고정, 양쪽 가변 */
+    gap: 20px;
+    align-items: start;
+    /* Fix vertical misalignment caused by 'center' centering uneven columns */
+}
+
+/* 선수 카드 공통 */
+/* 선수 카드 공통 */
+.p-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    /* background: #1a1a1a;  
+    /* padding: 20px; */
+    /* border-radius: 12px; */
+}
+
+.player-top-area {
+    height: 350px;
+    width: 100%;
+    /* 고정 높이: 모든 컬럼의 상단 영역 높이를 통일 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    /* Remove default justify-content to allow specific overrides */
+    /* 스탯 영역과의 간격 */
+}
+
+/* Player cards: Align content to bottom */
+.p-card .player-top-area {
+    justify-content: flex-end;
+}
+
+/* Center labels (VS): Align content to center */
+.v-labels .player-top-area {
+    justify-content: center;
+}
+
+.player-image-box {
+    width: 160px;
+    height: 160px;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.player-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.player-names h3 {
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 10px;
+}
+
+.player-names .eng {
+    font-size: 20px;
+    line-height: 1.2;
+    color: #888;
+    margin-bottom: 0;
+}
+
+.p-stats {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.big-num {
+    font-size: 60px;
+    font-weight: bold;
+    color: #fff;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.big-num span {
+    font-size: 24px;
+    color: #aaa;
+    font-weight: normal;
+}
+
+/* 중앙 라벨 영역 */
+.v-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    position: relative;
+    margin-top: -200px
+        /* Anchor for absolute VS text */
+}
+
+.vs-text {
+    font-size: 50px;
+    line-height: 1.2;
+    font-weight: 900;
+    color: #ccc;
+    font-style: italic;
+    margin: 0;
+    /* Static positioning within flex container */
+    width: 100%;
+    text-align: center;
+}
+
+/* v-labels 내부의 p-stats 타겟팅 - Remove negative margin hack */
+.v-labels .p-stats {
+    margin-top: 0;
+
+}
+
+/* v-labels 내부의 p-stats 안에 있는 p 태그 타겟팅 */
+.p-stats p {
+    height: 70px;
+    /* Match big-num height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #ccc;
+    font-size: 24px;
+    margin: 0;
+}
+
+.stat-icon {
+    width: 36px;
+    /* 32px -> 36px */
+    height: 36px;
+}
+
+/* =========================================
+   모바일 반응형 (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    .player-intro-wrap {
+        padding: 10px;
+    }
+
+    .compare-grid {
+        display: flex;
+        /* Grid에서 Flex로 변경하여 세로 스택 */
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* 중앙 라벨 컬럼(VS 및 라벨들) 숨기고, 각 선수 카드 내부에 라벨을 표시하도록 변경하거나
+       모바일에서는 단순히 선수 정보만 나열 */
+    .v-labels {
+        display: none;
+        /* 공간 부족으로 중앙 라벨 숨김 */
+    }
+
+    .p-card {
+        width: 100%;
+        border-bottom: 1px solid #333;
+        padding-bottom: 30px;
+    }
+
+    .p-card:last-child {
+        border-bottom: none;
+    }
+
+    .player-top-area {
+        height: auto;
+        /* 고정 높이 해제 */
+        margin-bottom: 20px;
+    }
+
+    .player-image-box {
+        width: 120px;
+        /* 이미지 축소 */
+        height: 120px;
+        margin-bottom: 15px;
+    }
+
+    .player-names h3 {
+        font-size: 28px;
+        /* 이름 폰트 축소 */
+    }
+
+    .player-names .eng {
+        font-size: 16px;
+    }
+
+    .p-stats {
+        gap: 15px;
+    }
+
+    .big-num {
+        font-size: 40px;
+        /* 숫자 축소 */
+        height: auto;
+    }
+
+    .big-num span {
+        font-size: 16px;
+    }
+
+    /* 모바일에서는 각 스탯이 무엇인지 알려주는 라벨을 추가해야 함 (중앙 라벨이 사라졌으므로)
+       하지만 HTML 구조를 바꾸지 않고 CSS로만 처리하기 위해 ::before 사용 */
+    .p-card .p-stats .big-num:nth-child(1)::before {
+        content: "세계 랭킹";
+        font-size: 12px;
+        color: #888;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .p-card .p-stats .big-num:nth-child(2)::before {
+        content: "시즌 기록";
+        font-size: 12px;
+        color: #888;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .p-card .p-stats .big-num:nth-child(3)::before {
+        content: "평균 점수";
+        font-size: 12px;
+        color: #888;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .p-card .p-stats .big-num:nth-child(4)::before {
+        content: "메달 획득";
+        font-size: 12px;
+        color: #888;
+        display: block;
+        margin-right: 10px;
+    }
+
+    .big-num {
+        flex-direction: row;
+        /* 라벨과 숫자를 가로로 배치 */
+        align-items: baseline;
+    }
+}

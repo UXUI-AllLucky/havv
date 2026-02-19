@@ -1,0 +1,25 @@
+.bannerBox {
+    width: 100%;
+     overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.bannerBox .pc_banner {
+    width: 100%;
+      object-fit: cover;
+    display: block; /* 이미지 하단 여백 제거 */
+}
+.bannerBox .mobile_banner {
+    display: none;
+}
+@media (max-width: 360px) {
+    .bannerBox{background-color: #151515;}
+    .bannerBox .pc_banner {
+   display: none;
+}
+.bannerBox .mobile_banner {
+     display: block;
+    width: 100%;
+    height: auto; /* 이미지 비율 유지 */
+}
+}

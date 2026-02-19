@@ -1,0 +1,70 @@
+.main-banner {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 모든 이미지 공통 스타일 */
+.main-banner img {
+    width: 100%;
+    /* PC 기준 높이 설정 (모바일에서는 auto로 풀어줘야 함) */
+    height: 41.6667vw;
+    object-fit: cover;
+    display: block; /* 이미지 하단 여백 제거 */
+}
+
+/* 모바일 배너는 평소(PC)에 숨김 */
+.main-banner .mobile-banner {
+    display: none;
+}
+
+/* 버튼 스타일 */
+.main-banner button {
+    position: absolute;
+    bottom: 12.6563vw;
+    left: 6.4583vw;
+    width: 10.7292vw;
+    height: 2.7083vw;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 0.5208vw;
+    border: 0.0521vw solid transparent;
+    cursor: pointer;
+}
+
+.main-banner button p {
+    color: #fff;
+    font-size: 1.1458vw;
+    font-weight: 600;
+    text-align: center;
+   
+}
+
+@media (max-width: 360px) {
+    .main-banner {
+        background: #151515;
+
+        /* 1. 패딩 적용 */
+        padding: 4.4444vw 2.7778vw;
+
+        /* ★중요★ 패딩 때문에 가로 스크롤이 생기지 않도록 설정 */
+        box-sizing: border-box;
+
+        /* PC에서 설정된 높이 값이 있다면 해제 (내용물 크기에 맞춤) */
+        height: auto;
+        
+    }
+
+    /* 2. PC용 배너 & 버튼 숨기기 (그룹화) */
+    .main-banner .pc-banner,
+    .main-banner button {
+        display: none;
+    }
+
+    /* 3. 모바일 배너 보이기 및 스타일 재설정 */
+    .main-banner .mobile-banner {
+        display: block;
+        width: 100%;
+        height: auto; /* 이미지 비율 유지 */
+        border-radius: 1.1111vw;
+    }
+}

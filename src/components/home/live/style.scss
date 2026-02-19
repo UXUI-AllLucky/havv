@@ -1,0 +1,375 @@
+/* =========================================
+   1. 기본 스타일 (Desktop / Tablet)
+   ========================================= */
+.live-section {
+  padding: 5vw 0 5vw 3.3333vw;
+  background-color: #151515;
+  color: white;
+  overflow-x: hidden;
+  width: 100%;
+
+  .live-title {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 1.6667vw;
+    margin-right: 0.5208vw;
+
+    h4 {
+      height: 4.0104vw;
+      display: flex;
+      font-size: 2.5vw;
+      font-weight: 700;
+      color: #f00;
+      align-items: center;
+
+      img {
+        width: 2.7083vw;
+        height: 2.7083vw;
+        margin-right: 0.3646vw;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-0.2083vw);
+      }
+    }
+
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2083vw;
+      font-weight: 600;
+      font-size: 1.4583vw;
+      color: #a3a3a3;
+
+      cursor: pointer;
+
+      img {
+        width: 1.25vw;
+        height: 1.25vw;
+      }
+    }
+  }
+
+  /* 가로 스크롤 컨테이너 */
+  .live-container {
+    height: 17.1875vw;
+    width: 100%;
+    padding-right: 3.3333vw;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1.5625vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .live-card {
+      position: relative;
+      width: 26.7708vw;
+      height: 17.1875vw;
+      flex-shrink: 0;
+      transition: transform 0.5s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05);
+        z-index: 10;
+      }
+    }
+  }
+}
+
+/* 썸네일 박스 공통 */
+.thumb-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625vw;
+  overflow: hidden;
+  background-color: #000;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+  }
+
+  .progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0.3125vw;
+    background: rgba(255, 255, 255, 0.3);
+    z-index: 3;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: #f00;
+  }
+
+  .live-text {
+    position: absolute;
+    left: 1.25vw;
+    bottom: 1.25vw;
+    z-index: 2;
+    // width: calc(100vw - 1.25vw);
+    margin-right: 1.25vw;
+
+    h3 {
+      font-size: 1.4583vw;
+      font-weight: 600;
+      line-height: 1.2;
+      color: #fff;
+      margin-bottom: 0.4167vw;
+      word-break: break-all;
+      // white-space: nowrap;
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+    }
+
+    p {
+      font-size: 1.1458vw;
+      font-weight: 400;
+      color: #e6e6e6;
+      line-height: 1.2;
+    }
+  }
+}
+
+/* 이미지 그림자 오버레이 */
+.thumb-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.8));
+  z-index: 1;
+}
+
+/* LIVE 뱃지 */
+.live-badge {
+  position: absolute;
+  top: 0.9375vw;
+  left: 1.5625vw;
+  z-index: 4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    background-color: #f00;
+    width: 3.6979vw;
+    height: 1.4583vw;
+    font-size: 1.0417vw;
+    font-weight: 400;
+    border-radius: 0.2083vw 0 0 0.2083vw;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  span {
+    color: #fff;
+    display: flex;
+    height: 1.4583vw;
+    align-items: center;
+    gap: 0.5208vw;
+    font-weight: 400;
+    font-size: 0.8333vw;
+    border-radius: 0 0.2083vw 0.2083vw 0;
+    padding: 0 0.5208vw;
+    background-color: rgba(0, 0, 0, 0.4);
+
+    img {
+      width: 0.9375vw;
+      height: 0.9375vw;
+    }
+  }
+}
+
+/* 예정된 방송 (.expected) 관련 */
+.expected::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7));
+  z-index: 1;
+}
+
+.expected img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay-text {
+  flex-wrap: wrap;
+  overflow: hidden;
+  font-weight: 600;
+
+  h3 {
+    position: absolute;
+    right: 7.0313vw;
+    top: 6.8229vw;
+    font-size: 1.7708vw;
+    font-weight: 600;
+    text-shadow: 0 0 0.2604vw rgba(0, 0, 0, 0.5);
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+  }
+
+  p {
+    position: absolute;
+    left: 1.6667vw;
+    bottom: 1.25vw;
+    font-size: 1.4583vw;
+    font-weight: 600;
+    color: #fff;
+    z-index: 2;
+  }
+}
+
+/* =========================================
+   2. 모바일 오버라이드 (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+  .live-section {
+    padding: 8.3333vw 0 11.1111vw 4.4444vw;
+
+    .live-title {
+      margin-bottom: 4.4444vw;
+      padding: 3.3333vw 4.4444vw 3.6111vw 0;
+
+      h4 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 6.6667vw;
+        font-size: 5.5556vw;
+
+        img {
+          width: 4.4444vw;
+          height: 4.4444vw;
+          margin-right: 1.1111vw;
+          transform: translateY(-0.2083vw);
+        }
+      }
+
+      .more {
+        gap: 0.5556vw;
+        font-size: 3.8889vw;
+        color: #a3a3a3;
+
+        img {
+          width: 4.4444vw;
+          height: 4.4444vw;
+        }
+      }
+    }
+
+    /* 가로 스크롤 컨테이너 */
+    .live-container {
+      height: 54vw;
+      /* Slightly increased height for better aspect ratio */
+      padding-right: 4.4444vw;
+      gap: 4.4444vw;
+
+      .live-card {
+        width: 90vw;
+        /* Wider card on mobile */
+        height: 54vw;
+      }
+    }
+  }
+
+  .thumb-box {
+    border-radius: 2vw;
+    /* Increased border radius for mobile */
+
+    .progress-bar {
+      height: 1.1111vw;
+    }
+
+    .live-text {
+      left: 3.3333vw;
+      bottom: 4.4444vw;
+      width: calc(100% - 4.4444vw);
+
+      h3 {
+        line-height: 1.15;
+        font-size: 4.4444vw;
+        font-weight: 700;
+        margin-bottom: 1.1111vw;
+      }
+
+      p {
+        font-size: 3.8889vw;
+      }
+    }
+  }
+
+  /* LIVE 뱃지 (레드) */
+  .live-badge {
+    top: 3.3333vw;
+    left: 3.3333vw;
+    height: 4.7222vw;
+
+    p {
+      width: 8.6111vw;
+      height: 3.8889vw;
+      font-size: 3.3333vw;
+      border-radius: 0.5556vw 0 0 0.5556vw;
+    }
+
+    span {
+      height: 3.8889vw;
+      gap: 0.5556vw;
+      font-size: 3.3333vw;
+      border-radius: 0 0.5556vw 0.5556vw 0;
+      padding: 0.1142vw 1.6667vw;
+      background-color: rgba(0, 0, 0, 0.4);
+
+      img {
+        width: 3.3333vw;
+        height: 3.3333vw;
+      }
+    }
+  }
+
+  .overlay-text {
+    h3 {
+      right: 27.2222vw;
+      top: 19.7222vw;
+      font-size: 4.4444vw;
+      font-weight: 700;
+    }
+
+    p {
+      left: 3.3333vw;
+      bottom: 4.4444vw;
+      font-size: 3.8889vw;
+      color: #e6e6e6;
+      font-weight: 400;
+    }
+  }
+}

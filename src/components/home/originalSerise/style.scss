@@ -1,0 +1,130 @@
+.original {
+  padding: 5vw 0 5vw 3.3333vw;
+  background-color: #151515;
+  color: white;
+  overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+
+  .original-title {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 1.6667vw;
+    margin-right: 0.5208vw;
+    h4 {
+    }
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2083vw;
+      font-weight: 600;
+      font-size: 1.4583vw;
+      color: #a3a3a3;
+      cursor: pointer;
+      img {
+        width: 1.25vw;
+        height: 1.25vw;
+      }
+    }
+  }
+  ul {
+    background-color: transparent; /* none은 유효하지 않음, transparent 사용 권장 */
+    height: 23.8542vw;
+    width: 100%;
+    padding-right: 3.3333vw;
+    display: flex; // [핵심1] 아이템을 가로로 나열
+    overflow-x: auto; // [핵심2] 가로 스크롤 활성화
+    gap: 3.125vw;
+    list-style: none; // 리스트 점 제거
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    // 스크롤바 숨기기 (선택사항 - 크롬, 사파리 등)
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    // 스크롤바 숨기기 (파이어폭스)
+    scrollbar-width: none;
+
+    li {
+      flex: 0 0 auto; // [핵심3] 아이템 크기가 줄어들지 않도록 고정
+      width: 17.2917vw;
+      flex-shrink: 0;
+      border-radius: 0.625vw;
+      overflow: hidden; /* 자식인 이미지가 둥근 모서리를 뚫고 나가지 않게 자름 */
+      transition: transform 0.5s ease;
+      cursor: pointer;
+      /* 호버 효과 수정 */
+      &:hover {
+        img {
+          transform: scale(1.05);
+        }
+      }
+
+      img {
+        width: 100%; // li 너비에 맞게 이미지 꽉 채우기
+        height: auto;
+        /* 부모 li에서 overflow: hidden을 줬으므로 여기선 border-radius 뺄 수도 있음 */
+        border-radius: 0.625vw;
+        object-fit: cover;
+        display: block;
+        pointer-events: none;
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  .original {
+    padding: 8.3333vw 0 11.1111vw 4.4444vw;
+    .original-title {
+      margin-bottom: 4.4444vw;
+      padding: 3.3333vw 4.4444vw 3.6111vw 0;
+      h4 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 6.6667vw;
+        font-size: 5.5556vw;
+      }
+      .more {
+        gap: 0.5556vw;
+        font-size: 3.8889vw;
+        color: #a3a3a3;
+        img {
+          width: 4.4444vw;
+          height: 4.4444vw;
+        }
+      }
+    }
+    ul {
+      height: auto; /* ⭐ 고정 높이(83.3333vw)를 제거하고 내용물에 맞춤 */
+      /* height: 83.3333vw;  <-- 이 부분을 지우거나 auto로 변경 */
+
+      width: 100%;
+      padding-right: 4.4444vw;
+      gap: 4.4444vw;
+
+      /* 스크롤바가 이미지 하단을 가리지 않게 하려면 약간의 패딩 추가 권장 */
+      padding-bottom: 2vw;
+
+      li {
+        width: 66.6667vw;
+        flex-shrink: 0;
+        border-radius: 1.1111vw;
+        /* li에도 높이 제한이 있다면 auto로 풀어주세요 */
+        height: auto;
+
+        img {
+          width: 100%;
+          height: auto; /* 비율 유지 */
+          object-fit: cover;
+          display: block;
+          border-radius: 1.1111vw;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,290 @@
+@charset "UTF-8";
+.popular-section {
+  padding: 5vw 0 5vw 3.3333vw;
+  background-color: #151515;
+  color: white;
+  overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+}
+.popular-section .popular-title {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  margin-bottom: 1.6667vw;
+  margin-right: 0.5208vw;
+}
+.popular-section .popular-title .more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.2083vw;
+  font-weight: 600;
+  font-size: 1.4583vw;
+  color: #a3a3a3;
+  cursor: pointer;
+}
+.popular-section .popular-title .more img {
+  width: 1.25vw;
+  height: 1.25vw;
+}
+.popular-section .popular-container {
+  display: flex;
+  gap: 1.25vw;
+  width: 100%;
+  padding-right: 3.3333vw;
+  height: 19.2708vw;
+  flex-wrap: nowrap;
+  box-sizing: border-box;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.popular-section .popular-container::-webkit-scrollbar {
+  display: none;
+}
+.popular-section .popular-container .popular-card {
+  position: relative;
+  flex-shrink: 0;
+  width: 18.75vw;
+  height: 19.1667vw;
+  cursor: pointer;
+}
+.popular-section .popular-container .popular-card .thumb {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.625vw;
+  overflow: hidden;
+}
+.popular-section .popular-container .popular-card .thumb .rank-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 7.8125vw;
+  height: 7.8125vw;
+  background: rgba(255, 255, 255, 0.2);
+  -webkit-clip-path: polygon(0 0, 100% 0, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 0 100%);
+  z-index: 5;
+  pointer-events: none;
+}
+.popular-section .popular-container .popular-card .thumb .rank-box .rank {
+  position: absolute;
+  top: -12%;
+  left: 1.1458vw;
+  font-size: 5.4167vw;
+  font-weight: 700;
+  z-index: 15;
+  letter-spacing: -0.0758vw;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0) 50.13%, rgba(0, 0, 0, 0.6) 79.25%);
+  background-clip: text;
+  -webkit-text-stroke-width: 0.1516vw;
+  -webkit-text-stroke-color: #000;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0.1042vw rgba(255, 255, 255, 0.6);
+}
+.popular-section .popular-container .popular-card .thumb::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  height: 0.4688vw;
+  background-color: #e50914;
+  z-index: 6;
+  display: none;
+}
+.popular-section .popular-container .popular-card .thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 0.625vw;
+  border: 0vw solid transparent;
+  z-index: 10;
+  pointer-events: none;
+}
+.popular-section .popular-container .popular-card .thumb .img-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.popular-section .popular-container .popular-card .thumb .img-box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.popular-section .popular-container .popular-card .thumb .img-box::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  z-index: 2;
+}
+.popular-section .popular-container .popular-card .thumb .time {
+  display: flex;
+  gap: 0.2083vw;
+  align-items: center;
+  position: absolute;
+  bottom: 0.625vw;
+  right: 0.625vw;
+  z-index: 3;
+  line-height: 0.8854vw;
+  font-size: 0.7292vw;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0.2083vw;
+  border-radius: 0.2083vw;
+}
+.popular-section .popular-container .popular-card .thumb .time .playIcon {
+  width: 0.7292vw;
+  height: 0.7292vw;
+}
+.popular-section .popular-container .popular-card .thumb .popular-text {
+  position: absolute;
+  bottom: 0.7813vw;
+  left: 0.625vw;
+  z-index: 4;
+}
+.popular-section .popular-container .popular-card .thumb .popular-text .popular-date {
+  font-size: 0.7292vw;
+  color: #7f7f7f;
+}
+.popular-section .popular-container .popular-card .thumb .popular-text strong {
+  display: flex;
+  font-weight: 600;
+  font-size: 1.0417vw;
+  color: #fff;
+  line-height: 140%;
+}
+.popular-section .popular-container .popular-card:hover .thumb .img-box img {
+  transform: scale(1.05);
+}
+.popular-section .popular-container .popular-card.rank-1 .thumb::before {
+  display: block;
+}
+.popular-section .popular-container .popular-card.rank-1 .thumb::after {
+  border: 0.1563vw solid #fff;
+}
+.popular-section .popular-container .popular-card.rank-1 .thumb .rank-box {
+  background: rgba(0, 0, 0, 0.8);
+}
+.popular-section .popular-container .popular-card.rank-1 .thumb .rank-box .rank {
+  background: linear-gradient(173deg, #ffe6a3 31.78%, #d3943c 42.33%, #bc6916 49.29%, #ffe6a3 61.43%, #d3943c 68%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 0;
+  filter: drop-shadow(0.1042vw 0.2083vw 0.3125vw rgba(0, 0, 0, 0.5));
+  font-size: 7.2917vw;
+  top: -28%;
+  left: 1.25vw;
+  z-index: 15;
+}
+
+@media (max-width: 360px) {
+  .popular-section {
+    padding: 8.3333vw 0 11.1111vw 4.4444vw;
+  }
+  .popular-section .popular-title {
+    margin-bottom: 4.4444vw;
+    padding: 3.3333vw 4.4444vw 3.6111vw 0;
+  }
+  .popular-section .popular-title h4 {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 6.6667vw;
+    font-size: 5.5556vw;
+  }
+  .popular-section .popular-title .more {
+    gap: 0.5556vw;
+    font-size: 3.8889vw;
+    color: #a3a3a3;
+  }
+  .popular-section .popular-title .more img {
+    width: 4.4444vw;
+    height: 4.4444vw;
+  }
+  .popular-section .popular-container {
+    gap: 4.4444vw;
+    padding-right: 4.4444vw;
+    height: 83.3333vw;
+  }
+  .popular-section .popular-container .popular-card {
+    width: 76.6667vw;
+    height: 83.3333vw;
+  }
+  .popular-section .popular-container .popular-card .thumb {
+    border-radius: 1.1111vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .rank-box {
+    width: 28.8889vw;
+    height: 28.8889vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .rank-box .rank {
+    top: -26%;
+    left: 4vw;
+    font-size: 25.5556vw;
+    letter-spacing: -0.2033vw;
+    -webkit-text-stroke-width: 0.8083vw;
+  }
+  .popular-section .popular-container .popular-card .thumb::before {
+    height: 1.1111vw;
+  }
+  .popular-section .popular-container .popular-card .thumb::after {
+    border-radius: 1.1111vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .time {
+    right: auto;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    gap: 0.5556vw;
+    bottom: 4.4444vw;
+    height: 4.7222vw;
+    line-height: 1.2;
+    left: 3.3333vw;
+    font-size: 3.3333vw;
+    padding: 1.1111vw;
+    border-radius: 0.5556vw;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  .popular-section .popular-container .popular-card .thumb .time .playIcon {
+    width: 3.3333vw;
+    height: 3.3333vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .popular-text {
+    top: 56.1111vw;
+    left: 3.3333vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .popular-text .popular-date {
+    font-size: 3.8889vw;
+    color: #e6e6e6;
+    font-weight: 400;
+    height: 4.7222vw;
+    margin-bottom: 0.5556vw;
+  }
+  .popular-section .popular-container .popular-card .thumb .popular-text strong {
+    font-size: 4.4444vw;
+    line-height: 1.2;
+  }
+  빨간바 표시 .popular-section .popular-container .popular-card.rank-1 .thumb::after {
+    border: 0.1563vw solid #fff;
+  }
+  .popular-section .popular-container .popular-card.rank-1 .thumb .rank-box .rank {
+    font-size: 25.5556vw;
+    top: -26%;
+    left: 4vw;
+  }
+}
+/*# sourceMappingURL=style.css.map */

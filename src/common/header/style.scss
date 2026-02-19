@@ -1,0 +1,158 @@
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  z-index: 999;
+  background: rgba(21, 21, 21, 0.6); /* 쉼표 추가 완료 */
+  transition: background-color 0.3s ease;
+}
+.header.on {
+  background-color: #151515;
+}
+.header .inner {
+  margin: 0 3.3333vw;
+  height: 4.1667vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .inner .left {
+  display: flex;
+  align-items: center;
+}
+.header .inner h1 {
+  width: 8.4375vw;
+  height: 3.6458vw;
+  margin-right: 2.8125vw;
+  display: flex;
+}
+.header .inner h1 a {
+  width: 100%;
+}
+.header .inner h1 .havv-pc-logo {
+  width: 100%;
+}
+.header .inner h1 .havv-mobile-logo {
+  display: none;
+}
+.header .inner h1 a img {
+  width: 100%;
+}
+.header .inner .nav {
+}
+.header .inner .nav .gnb {
+  display: flex;
+  gap: 1.6667vw;
+  align-items: center;
+}
+.header .inner .nav .gnb li {
+}
+.header .inner .nav .gnb .menubar {
+  display: none;
+}
+.header .inner .nav .gnb li a {
+  font-size: 1.1458vw;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+}
+.header .inner .nav .gnb .live_menu a {
+  color: #a20000;
+}
+.header .inner .info-box {
+}
+.header .inner .info-box .info {
+  display: flex;
+  gap: 1.25vw;
+}
+.header .inner .info-box .info li {
+}
+.header .inner .info-box .info li a {
+}
+.header .inner .info-box .info li a i {
+  font-size: 2.0833vw;
+  color: #fff;
+  display: flex;
+}
+.menubar{
+  display: none;
+}
+
+// 모바일
+@media (max-width: 360px) {
+  .header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    z-index: 999;
+    background-color: #151515;
+  }
+  .header .inner {
+    margin: 1.1111vw 0 1.1111vw 4.4444vw;
+    height: 11.6667vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .header .inner .left {
+    display: flex;
+    align-items: center;
+  }
+  .header .inner h1 {
+    width: 12.2222vw;
+    height: 6.3889vw;
+    margin-right: 0;
+  }
+  .header .inner h1 .havv-pc-logo {
+    display: none; /* PC 로고 숨김 (정상) */
+  }
+
+  .header .inner h1 .havv-mobile-logo {
+    width: 100%;
+    display: block; /* ⭐ [핵심 수정] display: none을 덮어씌워 보이게 설정 */
+  }
+
+  .header .inner h1 .havv-mobile-logo img {
+    width: 100%;
+    height: 100%; /* 이미지 높이도 꽉 차게 설정 권장 */
+    object-fit: contain; /* 비율 유지 */
+  }
+  .header .inner .nav {
+  }
+  .header .inner .nav .gnb {
+   display: none;
+  }
+  .header .inner .nav .gnb li {
+    display: none;
+  }
+
+  .header .inner .nav .gnb li a {
+  }
+  .header .inner .nav .gnb .live_menu a {
+    color: #a20000;
+  }
+  .header .inner .info-box {
+  }
+  .header .inner .info-box .info {
+    display: flex;
+    align-items: center;
+    gap: 1.25vw;
+  }
+  .header .inner .info-box .info li {
+  }
+ .header .inner .info-box .info .profile {
+    display: none;
+  }
+ .header .inner .info-box .info .menubar {
+    display: block !important; /* 우선순위 강제 적용 */
+  }
+  .header .inner .info-box .info li a {
+    padding: 2.5vw 2.5vw;
+    display: block;
+  }
+  .header .inner .info-box .info li a i {
+    font-size: 6.6667vw;
+  }
+}

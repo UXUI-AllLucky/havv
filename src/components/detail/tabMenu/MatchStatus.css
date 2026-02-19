@@ -1,0 +1,148 @@
+.match-status-container {
+    background-color: #0f1115;
+    /* 전체 어두운 배경 */
+    max-width: 1300px;
+    /* PC 화면폭 제한 */
+    margin: 0 auto;
+    /* 중앙 정렬 */
+    padding: 40px;
+    color: white;
+    font-family: 'Pretendard', sans-serif;
+}
+
+.match-set-title {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.match-dashboard {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    /* 카드 크기 증가로 간격 축소 */
+}
+
+/* 개별 팀 카드 박스 */
+.team-card {
+    width: 500px;
+    /* 350px -> 500px 과녁 확대 */
+}
+
+.team-info-header {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+/* 과녁이 들어가는 회색 박스 영역 */
+.target-area-box {
+    background: linear-gradient(145deg, #444, #222);
+    /* 과녁 배경 그라데이션 */
+    border-radius: 12px 12px 0 0;
+    /* 위쪽만 둥글게 */
+    padding: 30px;
+    position: relative;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* 탭과 자연스럽게 연결하기 위해 그림자 제거 및 테두리 추가 */
+    border: 1px solid #444;
+    border-bottom: none;
+}
+
+.target-svg {
+    width: 100%;
+    height: 100%;
+}
+
+/* 풍속 표시기 */
+.wind-indicator {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: #aaa;
+    font-size: 0.8rem;
+}
+
+.wind-indicator .arrow {
+    display: block;
+    font-size: 1.2rem;
+}
+
+/* 하단 선수 선택 탭 */
+.player-selection-tabs {
+    display: flex;
+    background-color: #222;
+    border-radius: 0 0 12px 12px;
+    /* 아래쪽만 둥글게 */
+    overflow: hidden;
+    margin-top: 0;
+    /* 박스와 밀착 */
+    border: 1px solid #444;
+    /* 테두리 추가 */
+    border-top: none;
+    /* 위쪽 테두리 제거 (박스와 자연스럽게 연결) */
+}
+
+.player-tab-btn {
+    flex: 1;
+    padding: 15px 0;
+    /* 세로 패딩 증가 */
+    border: none;
+    background: transparent;
+    color: #aaa;
+    cursor: pointer;
+    font-size: 1rem;
+    /* 폰트 키움 */
+    font-weight: 500;
+    transition: all 0.3s;
+}
+
+.player-tab-btn:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* 선택된 상태 스타일 */
+.player-tab-btn.active-kor {
+    background-color: #3f4a6d;
+    /* 한국팀 포인트 컬러 */
+    color: white;
+}
+
+.player-tab-btn.active-chn {
+    background-color: #7a3232;
+    /* 중국팀 포인트 컬러 */
+    color: white;
+}
+
+/* =========================================
+   모바일 반응형 (Max-width: 768px)
+   ========================================= */
+@media (max-width: 768px) {
+    .match-status-container {
+        padding: 20px;
+    }
+
+    .match-dashboard {
+        flex-direction: column;
+        /* 세로 배치 */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .team-card {
+        width: 100%;
+        max-width: 400px;
+        /* 너무 커지지 않게 제한 */
+    }
+
+    .target-area-box {
+        padding: 15px;
+    }
+
+    /* 화살표 글씨 크기 조정 */
+}

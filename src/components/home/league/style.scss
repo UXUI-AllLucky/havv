@@ -1,0 +1,171 @@
+.league {
+  background-color: #151515;
+  padding: 5vw 0 5vw 3.3333vw;
+  overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+  box-sizing: border-box;
+  .tab-menu {
+    display: flex;
+    align-items: center;
+    button {
+      box-sizing: border-box;
+      width: 4.5313vw;
+      padding: 0.5208vw 0.2604vw;
+      background: none;
+      border: none;
+      cursor: pointer;
+      position: relative;
+      margin-bottom: 1.6667vw;
+      p {
+        font-size: 1.0417vw;
+        font-weight: 600;
+        justify-content: center;
+        color: #7f7f7f;
+        display: block;
+        width: 4.0104vw;
+      }
+      &.active p {
+        color: var(--color-white);
+      }
+    }
+    &.active {
+      color: var(--color-white, #fff);
+      p {
+        color: #fff;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 0.2604vw solid var(--solid-wh-wh_100, #fff);
+      }
+    }
+  }
+  .league-container {
+    width: 100%;
+    max-width: calc(
+      100vw - 3.3333vw
+    ); /* ⭐ 화면 전체에서 왼쪽 패딩(3.3333vw)만큼 뺀 너비로 고정 */
+    padding-right: 3.3333vw;
+    overflow-x: auto;
+    overflow-y: hidden; /* ⭐ 세로 스크롤을 강제로 차단 */
+    cursor: grab;
+    user-select: none; /* ⭐ 드래그 시 텍스트 선택 방지 */
+    -webkit-user-drag: none; /* ⭐ 이미지 드래그 방지 */
+  }
+  :active {
+    cursor: grabbing;
+  }
+  ::-webkit-scrollbar {
+    display: none; /* 크롬/사파리 스크롤바 숨김 */
+  }
+  .sports-list {
+    display: inline-flex; /* ⭐ 내부 아이템만큼만 너비를 가지되 가로로 나열 */
+    flex-wrap: nowrap;
+    gap: 0.7813vw;
+
+    .league-item {
+      flex-shrink: 0; /* ⭐ 절대로 크기가 줄어들지 않게 고정 */
+      text-align: center;
+      width: 7.8125vw;
+      height: 14.5833vw;
+      cursor: pointer;
+      .img-box {
+        position: relative;
+        width: 7.2917vw;
+        height: 7.2917vw;
+        margin: 0 auto;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          pointer-events: none; /* ⭐ 이미지가 마우스 이벤트를 가로채지 않게 설정 */
+        }
+      }
+      .text-box {
+        font-weight: 600;
+        strong {
+          margin-top: 1.0417vw;
+          font-size: 1.3542vw;
+          height: 1.7188vw;
+          letter-spacing: -0.125vw;
+          color: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 0.1042vw;
+        }
+        span {
+          font-size: 1.1458vw;
+          color: #7f7f7f;
+          letter-spacing: -0.1042vw;
+          line-height: 1.1;
+          word-break: keep-all;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  .league {
+    padding: 8.3333vw 0 16.6667vw 4.4444vw;
+    .tab-menu {
+      display: flex;
+      align-items: center;
+      margin-bottom: 2.7778vw;
+      button {
+        box-sizing: border-box;
+        width: 16.6667vw;
+        padding: 1.1111vw 0 1.1111vw 0;
+        margin-bottom: 2.7778vw;
+
+        p {
+          font-size: 3.8889vw;
+          font-weight: 700;
+          line-height: 1.1;
+          letter-spacing: -0.2vw;
+          text-align: center;
+          display: block;
+          width: 13.6111vw;
+        }
+      }
+      &.active {
+        &::after {
+          border-bottom: 0.5556vw solid var(--solid-wh-wh_100, #fff);
+        }
+      }
+    }
+    .league-container {
+      max-width: calc(
+        100vw - 4.4444vw
+      ); /* ⭐ 화면 전체에서 왼쪽 패딩(3.3333vw)만큼 뺀 너비로 고정 */
+      padding-right: 4.4444vw;
+    }
+
+    .sports-list {
+      gap: 2.2222vw;
+      .league-item {
+        width: 30.5556vw;
+        height: 36.1111vw;
+        .img-box {
+          width: 16.6667vw;
+          height: 16.6667vw;
+        }
+        .text-box {
+          strong {
+            margin-top: 3.3333vw;
+            font-size: 4.4444vw;
+            height: 5.2778vw;
+            margin-bottom: none;
+          }
+          span {
+            font-size: 3.8889vw;
+          }
+        }
+      }
+    }
+  }
+}

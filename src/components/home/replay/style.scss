@@ -1,0 +1,207 @@
+.repaly-section {
+  padding: 5vw 0 5vw 3.3333vw;
+  background-color: #151515;
+  color: white;
+  overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+
+  .repaly-title {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin-bottom: 1.6667vw;
+    margin-right: 0.5208vw;
+    h4 {
+    }
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.2083vw;
+      font-weight: 600;
+      font-size: 1.4583vw;
+      color: #a3a3a3;
+      cursor: pointer;
+      img {
+        width: 1.25vw;
+        height: 1.25vw;
+      }
+    }
+  }
+  .repaly-container {
+    background-color: none;
+    height: 14.5833vw;
+    width: 100%;
+    padding-right: 3.3333vw;
+    flex-wrap: nowrap;
+    display: flex;
+    gap: 1.0417vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+      display: none; /* 크롬, 사파리 스크롤바 숨기기 */
+    }
+    .repaly-card {
+      position: relative;
+      height: 14.5833vw;
+      width: 17.1875vw;
+      flex-shrink: 0;
+      transition: transform 0.5s ease;
+      cursor: pointer;
+      .thumb {
+        gap: 1.0938vw;
+
+        .img-box {
+          position: relative;
+          width: 100%;
+          height: 11.0417vw;
+          margin-bottom: 1.0938vw;
+          border-radius: 0.5208vw;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            pointer-events: none;
+            transition: transform 0.5s ease;
+          }
+          .time {
+            display: flex;
+            padding: 0.2083vw;
+            gap: 0.2083vw;
+            align-items: center;
+            position: absolute;
+            bottom: 0.4167vw;
+            right: 0.4167vw;
+            z-index: 2;
+            font-size: 0.7292vw;
+            line-height: 0.8854vw;
+            font-weight: 400;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.4);
+            padding: 0.2083vw;
+            box-sizing: border-box;
+            border-radius: 0.2083vw;
+            .playIcon {
+              width: 0.7292vw;
+              height: 0.7292vw;
+            }
+          }
+        }
+        &:hover {
+          .img-box img {
+            transform: scale(1.05); // ✅ 적당한 배율로 확대
+          }
+        }
+
+        .repaly-text {
+          padding-right: 0.2083vw;
+          display: flex;
+          flex-direction: column;
+          strong {
+            height: 1.5625vw;
+            font-size: 1.0417vw;
+            color: #fff;
+            font-weight: 600;
+          }
+          .repaly-date {
+            height: 0.8854vw;
+            font-weight: 400;
+            font-size: 0.7292vw;
+            color: #7f7f7f;
+          }
+        }
+      }
+    }
+  }
+}
+@media (max-width: 360px) {
+  .repaly-section {
+    padding: 8.3333vw 0 11.1111vw 4.4444vw;
+    .repaly-title {
+      margin-bottom: 4.4444vw;
+      padding: 3.3333vw 4.4444vw 3.6111vw 0;
+      h4 {
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        height: 6.6667vw;
+        font-size: 5.5556vw;
+      }
+      .more {
+        gap: 0.5556vw;
+        font-size: 3.8889vw;
+        color: #a3a3a3;
+        img {
+          width: 4.4444vw;
+          height: 4.4444vw;
+        }
+      }
+    }
+    .repaly-container {
+      /* 컨테이너 높이도 내용물에 맞게 auto 유지 (이미 잘 되어 있습니다) */
+      height: auto;
+      /* ⭐ [핵심 해결책] 세로 넘침 숨김을 해제 */
+      // overflow-y: visible;
+      padding-bottom: 2vw;
+      gap: 4.4444vw;
+
+      .repaly-card {
+        width: 69.7222vw;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        .thumb {
+          gap: 1.1111vw;
+          .img-box {
+            height: 43.8889vw;
+            margin-bottom: 3.3333vw;
+            border-radius: 1.1111vw;
+
+            .time {
+              padding: 1.1111vw;
+              gap: 1.1111vw;
+              bottom: 3.3333vw;
+              right: 3.3333vw;
+              font-size: 3.3333vw;
+              border-radius: 1.1111vw;
+              .playIcon {
+                width: 3.8889vw;
+                height: 3.8889vw;
+              }
+            }
+          }
+          .repaly-text {
+            padding-right: 0.2083vw;
+            /* 텍스트 영역이 남은 공간을 자연스럽게 차지하도록 설정 */
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+
+            strong {
+              height: auto;
+              line-height: 1.2;
+              font-size: 4.4444vw;
+              font-weight: 700;
+              margin-bottom: 1.1111vw;
+            }
+
+            .repaly-date {
+              line-height: 1.2;
+              font-size: 3.8889vw;
+              color: #a3a3a3;
+              margin-top: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
