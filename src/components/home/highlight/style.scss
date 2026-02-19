@@ -126,7 +126,6 @@
             font-weight: 600;
             display: block;
             margin-bottom: 0.5556vw;
-
           }
 
           p {
@@ -153,17 +152,23 @@
     position: relative;
 
     .highlight-section {
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
       background-color: transparent;
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
-
     }
-
 
     .highlight-title {
       font-size: 2.5vw;
+      line-height: 1.2;
+      font-weight: 700;
+      margin-bottom: 1.5625vw;
+      height: 3.0208vw;
+      .more {
+        color: transparent;
+      }
     }
 
     .highlight-container {
@@ -183,7 +188,6 @@
 
             strong {
               font-size: 1.1vw;
-
             }
 
             p {

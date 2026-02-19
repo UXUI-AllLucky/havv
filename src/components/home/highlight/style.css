@@ -3,8 +3,11 @@
   padding: 5vw 0 5vw 3.3333vw;
   background-color: #151515;
   color: white;
-  overflow-x: hidden; /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
-  width: 100%; /* 너비를 화면에 딱 맞게 고정 */
+  overflow-x: hidden;
+  /* ⭐ 섹션 자체가 옆으로 늘어나는 것을 방지 */
+  width: 100%;
+  /* 너비를 화면에 딱 맞게 고정 */
+  /* Detail Page Specific Styles */
 }
 .highlight-section .highlight-title {
   display: flex;
@@ -12,6 +15,9 @@
   box-sizing: border-box;
   margin-bottom: 1.6667vw;
   margin-right: 0.5208vw;
+}
+.highlight-section .highlight-title h4 {
+  /* Intentionally empty or remove if not needed */
 }
 .highlight-section .highlight-title .more {
   display: flex;
@@ -29,7 +35,7 @@
 }
 .highlight-section .highlight-container {
   background-color: none;
-  height: 17.1875vw;
+  height: auto;
   width: 100%;
   padding-right: 3.3333vw;
   flex-wrap: nowrap;
@@ -47,11 +53,12 @@
   -ms-overflow-style: none;
 }
 .highlight-section .highlight-container ::-webkit-scrollbar {
-  display: none; /* 크롬, 사파리 스크롤바 숨기기 */
+  display: none;
+  /* 크롬, 사파리 스크롤바 숨기기 */
 }
 .highlight-section .highlight-container .hightlight-card {
   position: relative;
-  height: 17.7083vw;
+  height: auto;
   width: 17.3958vw;
   flex-shrink: 0;
   transition: transform 0.5s ease;
@@ -107,10 +114,12 @@
   gap: 0.1563vw;
 }
 .highlight-section .highlight-container .hightlight-card .thumb .highlight-text strong {
-  line-height: 1.25vw;
+  line-height: 1.2;
   font-size: 1.0417vw;
   color: #fff;
   font-weight: 600;
+  display: block;
+  margin-bottom: 0.5556vw;
 }
 .highlight-section .highlight-container .hightlight-card .thumb .highlight-text p {
   line-height: 0.8854vw;
@@ -123,6 +132,50 @@
   font-weight: 400;
   font-size: 0.7292vw;
   color: #7f7f7f;
+}
+.highlight-section.detail-type {
+  background-color: transparent;
+  position: relative;
+}
+.highlight-section.detail-type .highlight-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.highlight-section.detail-type .highlight-title {
+  font-size: 2.5vw;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.5625vw;
+  height: 3.0208vw;
+}
+.highlight-section.detail-type .highlight-title .more {
+  color: transparent;
+}
+.highlight-section.detail-type .highlight-container {
+  height: 18vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card {
+  width: 17vw;
+  height: 18vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card .thumb .img-box {
+  height: 11vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card .thumb .highlight-text {
+  gap: 1vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card .thumb .highlight-text strong {
+  font-size: 1.1vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card .thumb .highlight-text p {
+  font-size: 0.8vw;
+}
+.highlight-section.detail-type .highlight-container .hightlight-card .thumb .highlight-text .highlight_date {
+  font-size: 0.8vw;
 }
 
 @media (max-width: 360px) {
@@ -151,15 +204,16 @@
     height: 4.4444vw;
   }
   .highlight-section .highlight-container {
-    height: 68.0556vw;
+    height: auto;
     padding-right: 4.4444vw;
     gap: 4.4444vw;
     /* ⭐ 중요: .hightlight-card를 이 안으로 이동시켜야 우선순위가 맞습니다 */
     /* .hightlight-card 닫기 */
   }
   .highlight-section .highlight-container .hightlight-card {
-    height: 68.0556vw;
-    width: 70vw; /* 이제 이 너비가 정상 적용됩니다 */
+    height: auto;
+    width: 70vw;
+    /* 이제 이 너비가 정상 적용됩니다 */
   }
   .highlight-section .highlight-container .hightlight-card .thumb {
     gap: 3.3333vw;
@@ -186,7 +240,8 @@
     /* ✅ 중요: gap이 먹히도록 flex 설정 추가 */
     display: flex;
     flex-direction: column;
-    gap: 0.5556vw; /* 간격도 조금 더 넉넉하게 조정 */
+    gap: 0.5556vw;
+    /* 간격도 조금 더 넉넉하게 조정 */
   }
   .highlight-section .highlight-container .hightlight-card .thumb .highlight-text strong {
     /* height: 5.2778vw;  ❌ 고정 높이 제거 (글자가 많으면 잘리거나 겹침) */
@@ -201,9 +256,11 @@
     font-size: 3.8889vw;
     /* ✅ 중요: 본문 줄 간격 확보 */
     line-height: 1.2;
-    color: #e6e6e6; /* 가독성을 위해 색상 재확인 */
+    color: #e6e6e6;
+    /* 가독성을 위해 색상 재확인 */
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }

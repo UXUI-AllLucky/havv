@@ -2,92 +2,95 @@
 
 /* 기본 데스크탑 레이아웃 (Grid) */
 .detail-grid-container {
-    display: grid;
-    grid-template-columns: 3.5fr 1fr;
-    gap: 20px;
-    align-items: stretch;
+  display: grid;
+  width: 1704px;
+  height: 720px;
+  grid-template-columns: 3.5fr 1fr;
+  gap: 20px;
+  margin-top: 32px;
+  align-items: stretch;
 }
 
 .video-section-wrapper {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-section-wrapper {
-    height: 100%;
-    overflow: hidden;
+  height: 100%;
+  /* overflow: hidden; */
 }
 
 .detail-controls-container {
-    margin-top: 15px;
-    display: grid;
-    grid-template-columns: 3.5fr 1fr;
-    gap: 20px;
+  margin-top: 15px;
+  display: grid;
+  grid-template-columns: 3.5fr 1fr;
+  gap: 20px;
 }
 
 .video-controls {
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #fff;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
 }
 
 .video-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin: 0 20px 0 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    flex: 1;
+  font-size: 42px;
+  font-weight: 600;
+  margin: 0 20px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  flex: 1;
 }
 
 .channel-buttons {
-    display: flex;
-    gap: 10px;
-    flex-shrink: 0;
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
 }
 
 /* =========================================
    모바일 / 태블릿 반응형 (Max-width: 1024px)
    ========================================= */
 @media (max-width: 1024px) {
-    .detail-grid-container {
-        display: flex;
-        /* Grid에서 Flex로 변경하여 세로 배치 */
-        flex-direction: column;
-        gap: 0;
-    }
+  .detail-grid-container {
+    display: flex;
+    /* Grid에서 Flex로 변경하여 세로 배치 */
+    flex-direction: column;
+    gap: 0;
+  }
 
-    .video-section-wrapper {
-        width: 100%;
-        /* Video is mostly 16:9, controlled by aspect-ratio inline style or here */
-    }
+  .video-section-wrapper {
+    width: 100%;
+    /* Video is mostly 16:9, controlled by aspect-ratio inline style or here */
+  }
 
-    .chat-section-wrapper {
-        width: 100%;
-        height: 60vh;
-        /* 채팅창 높이 확보 (화면의 60% 정도) */
-        margin-top: 10px;
-    }
+  .chat-section-wrapper {
+    width: 100%;
+    height: 60vh;
+    /* 채팅창 높이 확보 (화면의 60% 정도) */
+    margin-top: 10px;
+  }
 
-    /* 컨트롤 버튼 영역도 세로 배치로 변경 */
-    .detail-controls-container {
-        display: flex;
-        flex-direction: column;
-        margin-top: 10px;
-        gap: 10px;
-    }
+  /* 컨트롤 버튼 영역도 세로 배치로 변경 */
+  .detail-controls-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    gap: 10px;
+  }
 
-    /* 모바일에서 컨트롤 위치 조정 (영상 바로 아래로) */
-    .detail-controls-container {
-        order: 2;
-        /* Flex 순서 변경 가능성 염두 (현재 구조상 Video 아래에 위치함) */
-    }
+  /* 모바일에서 컨트롤 위치 조정 (영상 바로 아래로) */
+  .detail-controls-container {
+    order: 2;
+    /* Flex 순서 변경 가능성 염두 (현재 구조상 Video 아래에 위치함) */
+  }
 
-    /* 구조 상: VideoWrapper -> Controls -> Chat 순서가 되도록 하려면
+  /* 구조 상: VideoWrapper -> Controls -> Chat 순서가 되도록 하려면
   Detail.jsx의 돔 구조를 약간 바꿔야 할 수도 있지만, 
   현재 구조(Video / Chat 병렬)에서는 
   Video -> Chat -> Controls 순서로 배치됨. 
@@ -95,30 +98,30 @@
   Video -> Controls -> Chat 순서가 더 자연스러울 수 있음.
   */
 
-    .video-controls {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
+  .video-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
 
-    .video-title {
-        font-size: 18px;
-        /* 모바일 폰트 사이즈 축소 */
-        white-space: normal;
-        /* 제목 두 줄 허용 */
-        margin-right: 0;
-    }
+  .video-title {
+    font-size: 18px;
+    /* 모바일 폰트 사이즈 축소 */
+    white-space: normal;
+    /* 제목 두 줄 허용 */
+    margin-right: 0;
+  }
 
-    .channel-buttons {
-        width: 100%;
-        justify-content: flex-start;
-        overflow-x: auto;
-        /* 버튼이 많으면 스크롤 */
-        padding-bottom: 5px;
-    }
+  .channel-buttons {
+    width: 100%;
+    justify-content: flex-start;
+    overflow-x: auto;
+    /* 버튼이 많으면 스크롤 */
+    padding-bottom: 5px;
+  }
 
-    .channel-buttons button {
-        font-size: 14px !important;
-        padding: 5px 10px !important;
-    }
+  .channel-buttons button {
+    font-size: 14px !important;
+    padding: 5px 10px !important;
+  }
 }

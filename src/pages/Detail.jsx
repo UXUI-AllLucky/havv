@@ -13,6 +13,20 @@ import { sportsVideos } from '../store/videoData'; // 비디오 데이터 추가
 
 import './Detail.css'; // 외부 CSS 파일 임포트
 
+// 기존 channels 객체를 다음과 같이 변경합니다.
+// (실제 각 방송사의 유튜브 ID가 있다면 'sDawO6w8bd4' 자리에 넣어주세요!)
+const channelsInfo = {
+  KBS: { logo: '/images/kbs.svg', videoId: 'sDawO6w8bd4' },
+  MBC: { logo: '/images/mbc.svg', videoId: 'sDawO6w8bd4' },
+  SBS: { logo: '/images/sbs.svg', videoId: 'sDawO6w8bd4' },
+};
+
+const handleChannelChange = (channel) => {
+  setActiveChannel(channel);
+  // 이미지 경로가 아닌 비디오 ID를 상태로 업데이트!
+  setVideoId(channelsInfo[channel].videoId);
+};
+
 const Detail = () => {
   const [activeTab, setActiveTab] = useState('선수 소개');
 
@@ -34,9 +48,9 @@ const Detail = () => {
   }, [id]);
 
   const channels = {
-    KBS: 'sDawO6w8bd4',
-    MBC: 'sDawO6w8bd4',
-    SBS: 'sDawO6w8bd4',
+    KBS: '/images/kbs.svg',
+    MBC: '/images/mbc.svg',
+    SBS: '/images/sbs.svg',
   };
 
   const handleChannelChange = (channel) => {
@@ -61,7 +75,7 @@ const Detail = () => {
   return (
     <div
       style={{
-        backgroundColor: '#000',
+        backgroundColor: '#151515',
         minHeight: '100vh',
         padding: '100px 20px 20px',
       }}
@@ -69,7 +83,7 @@ const Detail = () => {
       <div
         style={{
           width: '100%',
-          maxWidth: '1600px',
+          maxWidth: '1720px',
           margin: '0 auto',
           padding: '0 40px',
           boxSizing: 'border-box',
@@ -84,7 +98,9 @@ const Detail = () => {
               <div
                 style={{
                   position: 'relative',
-                  width: '100%',
+                  width: '1280px',
+                  heightL: '720px',
+                  // width: '100%',
                   aspectRatio: '16/9',
                   borderRadius: '12px',
                   overflow: 'hidden',
@@ -98,42 +114,65 @@ const Detail = () => {
               <Chat />
             </aside>
           </div>
-
-          {/* Video Title & Channel Buttons (Aligned with Video Width) */}
           <div className="detail-controls-container">
             <div className="video-controls">
               <h2 className="video-title">
                 2025 세계선수권대회 리커브 여자 단체전 결승
               </h2>
-              <div className="channel-buttons">
-                {Object.keys(channels).map((channel) => (
-                  <button
-                    key={channel}
-                    onClick={() => handleChannelChange(channel)}
-                    style={{
-                      padding: '8px 15px',
-                      backgroundColor: 'transparent',
-                      color: activeChannel === channel ? '#fff' : '#ccc',
-                      border: 'none',
-                      borderBottom:
-                        activeChannel === channel
-                          ? '2px solid #fff'
-                          : '2px solid transparent',
-                      borderRadius: '0',
-                      cursor: 'pointer',
-                      fontWeight: 'bold',
-                      fontSize: '16px',
-                      transition: 'all 0.3s ease',
-                      textShadow: '0 1px 2px rgba(0,0,0,0.5)',
-                    }}
-                  >
-                    {channel}
-                  </button>
-                ))}
+              <div
+                className="channel-buttons"
+                style={{ display: 'flex', gap: '6px' }}
+              >
+                {Object.keys(channelsInfo).map((channel) => {
+                  // 현재 채널이 활성화 상태인지 변수로 저장
+                  const isActive = activeChannel === channel;
+
+                  return (
+                    <button
+                      key={channel}
+                      onClick={() => handleChannelChange(channel)}
+                      style={{
+                        // 1. 버튼 자체는 클릭하기 좋게 넓은 패딩 영역을 유지합니다.
+                        padding: '8px 15px',
+                        backgroundColor: 'transparent',
+                        border: 'none', // 버튼 자체의 테두리는 없앱니다.
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                      }}
+                    >
+                      {/* 2. 이미지를 감싸는 상자(div)를 만들고, 여기에 밑줄을 줍니다. */}
+                      <div
+                        style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          // 이 상자에 밑줄을 설정합니다. 상자 너비는 내용물(이미지)에 맞춰집니다.
+                          borderBottom: isActive
+                            ? '4px solid #354AC4'
+                            : '2px solid transparent',
+                          // 로고와 밑줄 사이의 간격을 줍니다. 이 값을 조절하면 간격이 변합니다.
+                          paddingBottom: '6px',
+                          transition: 'all 0.3s ease',
+                        }}
+                      >
+                        <img
+                          src={channelsInfo[channel].logo}
+                          alt={`${channel} logo`}
+                          style={{
+                            height: '24px', // 이미지 높이는 24px로 고정되어 잘 보입니다.
+                            width: 'auto',
+                            opacity: isActive ? 1 : 0.5,
+                            display: 'block', // 이미지 하단의 미세한 여백 제거
+                          }}
+                        />
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
-            {/* Empty column to match Chat width above */}
-            <div></div>
           </div>
         </section>
 
@@ -154,11 +193,7 @@ const Detail = () => {
 
         {/* 하단: 하이라이트 섹션 (모든 탭에서 보임) */}
         {/* 하단: 하이라이트 섹션 (모든 탭에서 보임) */}
-        <Highlight
-          highlightVideos={highlightData}
-
-          className="detail-type"
-        />
+        <Highlight highlightVideos={highlightData} className="detail-type" />
       </div>
     </div>
   );
