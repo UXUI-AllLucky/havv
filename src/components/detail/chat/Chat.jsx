@@ -1,4 +1,4 @@
-import React from 'react';
+
 import './style.css';
 import { FaUser, FaRegCommentDots, FaRegSmile, FaRegPaperPlane } from "react-icons/fa";
 
