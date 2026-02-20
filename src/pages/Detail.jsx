@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Point from '../components/detail/point/Point';
 import Video from '../components/detail/video/Video';
 import Chat from '../components/detail/chat/Chat';
+
 import Player from '../components/detail/tabMenu/Player'; // Player.jsx
 import Team from '../components/detail/tabMenu/Team'; // Team.jsx
 import MatchStatus from '../components/detail/tabMenu/MatchStatus'; // MatchStatus.jsx
@@ -99,7 +100,7 @@ const Detail = () => {
             </div>
             {/* Chat Wrapper */}
             <aside className="chat-section-wrapper">
-              <Chat />
+              <Chat/>
             </aside>
           </div>
           <div className="detail-controls-container">
