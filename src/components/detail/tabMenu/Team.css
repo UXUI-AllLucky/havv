@@ -1,11 +1,13 @@
 /* src/components/detail/tabMenu/Team.css */
 
 .team-container {
-    background-color: #0a0a0a;
+
     min-height: 100vh;
     padding: 40px 20px;
     color: #fff;
     font-family: sans-serif;
+        margin: 20px 0;
+    text-align: center;
 }
 
 .team-content-wrapper {
@@ -19,7 +21,7 @@
 
 .team-side {
     flex: 1;
-    background-color: #0a0a0a;
+
 }
 
 .team-header {
@@ -74,10 +76,9 @@
         text-align: center;
     }
 
-    margin: 20px 0;
-    text-align: center;
+
 }
-}
+
 
 /* =========================================
    PlayerRow 및 내부 요소 스타일 (Inline -> CSS)
@@ -85,8 +86,8 @@
 .player-row {
     display: flex;
     align-items: flex-start;
-    padding: 30px 40px;
-    gap: 25px;
+padding: 32px 26px;
+    gap: 22px;
     width: 100%;
     box-sizing: border-box;
     border-bottom: 1px solid #333;
@@ -105,6 +106,7 @@
 }
 
 .player-info {
+    width: 472px;
     flex: 1;
     min-width: 0;
 }
@@ -113,7 +115,7 @@
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 40px;
+    gap: 80px;
     margin-bottom: 20px;
 }
 
@@ -166,7 +168,7 @@
 
 .player-stats-grid {
     display: flex;
-    gap: 20px;
+    gap: 24px;
     justify-content: flex-start;
 }
 

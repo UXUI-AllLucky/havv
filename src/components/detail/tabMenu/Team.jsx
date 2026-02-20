@@ -3,11 +3,11 @@ import './Team.css'; // CSS 파일 임포트
 
 // --- 서브 컴포넌트: 원형 차트 (수정 없음) ---
 const StatCircle = ({ label, value, percent, color }) => (
-    <div style={{ textAlign: 'center', flexShrink: 0 }}>
+    <div style={{ textAlign: 'left', flexShrink: 0 }}>
         <div
             style={{
-                width: '54px',
-                height: '54px',
+                width: '100px',
+                height: '100px',
                 borderRadius: '50%',
                 background: `conic-gradient(${color} ${percent}%, #333 ${percent}%)`,
                 display: 'flex',
@@ -18,22 +18,24 @@ const StatCircle = ({ label, value, percent, color }) => (
         >
             <div
                 style={{
-                    width: '34px',
-                    height: '34px',
+                    width: '43px',
+                    height: '43px',
                     backgroundColor: '#1a1a1a',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    fontSize: '13px',
-                    fontWeight: 'bold',
-                    color: '#fff',
+                    fontSize: '16px',
+                    fontWeight: 500,
+                    color: '#E6E6E6',
+                    lineHeight: '1.2',
+                    letterSpacing: '-1.2px',
                 }}
             >
-                {value}
+                {value.replace('%', '')}<span style={{fontSize: '11px', position: 'relative', bottom: '-3px'}}>%</span>
             </div>
         </div>
-        <div style={{ fontSize: '10px', color: '#888', whiteSpace: 'nowrap' }}>{label}</div>
+        <div style={{ fontSize: '14px', color: '#D1D1D1', whiteSpace: 'nowrap' }}>{label}</div>
     </div>
 );
 
@@ -273,11 +275,12 @@ const Team = () => {
                                         fontWeight: 'bold',
                                         color: '#fff',
                                         marginBottom: '8px',
+                                        textAlign: 'left' 
                                     }}
                                 >
                                     감독 양창훈
                                 </div>
-                                <div style={{ fontSize: '11px', color: '#aaa', lineHeight: '1.6' }}>
+                                <div style={{ fontSize: '11px', color: '#aaa', lineHeight: '1.6', textAlign: 'left' }}>
                                     現 대표팀 남녀 총감독 <br />
                                     2015-2016 대한민국 리커브 여자 감독 <br />
                                     2010 대한민국 리커브 남자 코치 <br />
@@ -330,6 +333,7 @@ const Team = () => {
                                         color: '#aaa',
                                         fontWeight: 'normal',
                                         marginLeft: '10px',
+                                        
                                     }}
                                 >
                                     (세계랭킹 2위)
@@ -343,6 +347,7 @@ const Team = () => {
                                     fontSize: '14px',
                                     color: '#ccc',
                                     lineHeight: '1.6',
+                                    textAlign: 'left',
                                 }}
                             >
                                 <li>최근 경기: 멕시코 3:5 중국 (준결승)</li>
@@ -387,11 +392,12 @@ const Team = () => {
                                         fontWeight: 'bold',
                                         color: '#fff',
                                         marginBottom: '8px',
+                                        textAlign: 'left' 
                                     }}
                                 >
                                     감독 권용학
                                 </div>
-                                <div style={{ fontSize: '11px', color: '#aaa', lineHeight: '1.6' }}>
+                                <div style={{ fontSize: '11px', color: '#aaa', lineHeight: '1.6', textAlign: 'left' }}>
                                     現 중국 대표팀 여자 총감독 <br />
                                     2022-2025 중국 리커브 여자 감독 <br />
                                     상하이시 대표팀 감독 <br />

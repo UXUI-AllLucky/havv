@@ -1,6 +1,6 @@
 .player-intro-wrap {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1540px;
     /* PC 화면에서 너무 퍼지지 않게 제한 */
     margin: 0 auto;
     /* 중앙 정렬 */
@@ -9,6 +9,7 @@
 }
 
 .matchup-row {
+    width: 700px;
     margin-bottom: 60px;
     /* 각 매치업 사이 간격 */
     border-bottom: 1px solid #333;

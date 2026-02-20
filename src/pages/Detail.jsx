@@ -77,20 +77,20 @@ const Detail = () => {
       style={{
         backgroundColor: '#151515',
         minHeight: '100vh',
-        padding: '100px 20px 20px',
+        padding: '5.21vw 1.04vw 1.04vw',
       }}
     >
       <div
         style={{
           width: '100%',
-          maxWidth: '1720px',
+          maxWidth: '89.58vw',
           margin: '0 auto',
-          padding: '0 40px',
+          padding: '0 2.08vw',
           boxSizing: 'border-box',
         }}
       >
         {/* 상단 섹션: 2단 구조 (Row 1: Player+Chat, Row 2: Title/Btn) */}
-        <section style={{ marginBottom: '30px' }}>
+        <section style={{ marginBottom: '1.56vw' }}>
           {/* Row 1: 비디오 플레이어와 채팅창 (높이 맞춤) */}
           <div className="detail-grid-container">
             {/* Video Wrapper ONLY */}
@@ -98,11 +98,11 @@ const Detail = () => {
               <div
                 style={{
                   position: 'relative',
-                  width: '1280px',
-                  heightL: '720px',
+                  width: '66.67vw',
+                  heightL: '37.5vw',
                   // width: '100%',
                   aspectRatio: '16/9',
-                  borderRadius: '12px',
+                  borderRadius: '0.63vw',
                   overflow: 'hidden',
                 }}
               >
@@ -121,7 +121,7 @@ const Detail = () => {
               </h2>
               <div
                 className="channel-buttons"
-                style={{ display: 'flex', gap: '6px' }}
+                style={{ display: 'flex', gap: '0.31vw' }}
               >
                 {Object.keys(channelsInfo).map((channel) => {
                   // 현재 채널이 활성화 상태인지 변수로 저장
@@ -133,7 +133,7 @@ const Detail = () => {
                       onClick={() => handleChannelChange(channel)}
                       style={{
                         // 1. 버튼 자체는 클릭하기 좋게 넓은 패딩 영역을 유지합니다.
-                        padding: '8px 15px',
+                        padding: '0.42vw 0.78vw',
                         backgroundColor: 'transparent',
                         border: 'none', // 버튼 자체의 테두리는 없앱니다.
                         cursor: 'pointer',
@@ -150,10 +150,10 @@ const Detail = () => {
                           alignItems: 'center',
                           // 이 상자에 밑줄을 설정합니다. 상자 너비는 내용물(이미지)에 맞춰집니다.
                           borderBottom: isActive
-                            ? '4px solid #354AC4'
-                            : '2px solid transparent',
+                            ? '0.21vw solid #354AC4'
+                            : '0.1vw solid transparent',
                           // 로고와 밑줄 사이의 간격을 줍니다. 이 값을 조절하면 간격이 변합니다.
-                          paddingBottom: '6px',
+                          paddingBottom: '0.31vw',
                           transition: 'all 0.3s ease',
                         }}
                       >
@@ -161,7 +161,7 @@ const Detail = () => {
                           src={channelsInfo[channel].logo}
                           alt={`${channel} logo`}
                           style={{
-                            height: '24px', // 이미지 높이는 24px로 고정되어 잘 보입니다.
+                            height: '1.25vw', // 이미지 높이는 24px로 고정되어 잘 보입니다.
                             width: 'auto',
                             opacity: isActive ? 1 : 0.5,
                             display: 'block', // 이미지 하단의 미세한 여백 제거
@@ -184,7 +184,7 @@ const Detail = () => {
         />
 
         {/* 하단: 탭별 가변 콘텐츠 (컴포넌트 이름 수정) */}
-        <div className="tab-content" style={{ marginTop: '30px' }}>
+        <div className="tab-content" style={{ marginTop: '1.56vw' }}>
           {activeTab === '선수 소개' && <Player />}
           {activeTab === '팀 소개' && <Team />}
           {activeTab === '경기 상황' && <MatchStatus />}

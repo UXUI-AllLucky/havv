@@ -1,10 +1,10 @@
 /* src/components/detail/chat/style.css */
 .chat-container {
   height: 100%;
-  width: 410px;
+  width: 21.35vw;
   background-color: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 12px;
+  border: 0.052vw solid #333;
+  border-radius: 0.63vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -13,8 +13,8 @@
 
 /* 헤더 영역 */
 .chat-header {
-  padding: 6px 11px;
-  border-bottom: 1px solid #333;
+  padding: 0.31vw 0.57vw;
+  border-bottom: 0.052vw solid #333;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -24,42 +24,42 @@
 .chat-header .left {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.42vw;
   color: #888;
-  font-size: 14px;
+  font-size: 0.73vw;
 }
 
 .chat-header .title {
   color: #fff;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 0.83vw;
 }
 
 .chat-header .icon {
   color: #fff;
-  font-size: 20px;
+  font-size: 1.04vw;
 }
 
 /* 메시지 리스트 영역 */
 .chat-messages {
   flex: 1;
-  height: 608px;
+  height: 31.67vw;
   overflow-y: auto;
-  padding: 12px;
+  padding: 0.63vw;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 0.78vw;
 }
 
 .message-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 0.63vw;
 }
 
 .message-item .profile-img {
-  width: 36px;
-  height: 36px;
+  width: 1.88vw;
+  height: 1.88vw;
   border-radius: 50%;
   object-fit: cover;
   background-color: #ccc;
@@ -71,34 +71,35 @@
 }
 
 .message-content .user-name {
-  font-size: 13px;
+  font-size: 0.68vw;
   color: #888;
   /* 왕티즈는 약간 회색으로 */
-  margin-bottom: 4px;
+  margin-bottom: 0.21vw;
 }
 
 .message-content .text {
   color: #fff;
-  font-size: 15px;
+  font-size: 0.78vw;
   line-height: 1.4;
 }
 
 /* 입력창 영역 */
 .chat-input-area {
-  padding: 8px 9px;
-  border-top: 1px solid #333;
+  padding: 0.42vw 0.47vw;
+  border-top: 0.052vw solid #333;
   background-color: #222;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.52vw;
 }
 
 .chat-input-area .my-profile {
-  width: 32px;
-  height: 32px;
+  width: 1.67vw;
+  height: 1.67vw;
   border-radius: 50%;
   background-color: #555;
 }
+
 
 .input-box {
   flex: 1;
@@ -109,8 +110,8 @@
 
 .input-box input {
   width: 100%;
-  padding: 10px 40px 10px 15px;
-  border-radius: 20px;
+  padding: 0.52vw 2.08vw 0.52vw 0.78vw;
+  border-radius: 1.04vw;
   background-color: #333;
   border: none;
   color: #fff;
@@ -119,7 +120,7 @@
 
 .input-box .smiley-icon {
   position: absolute;
-  right: 15px;
+  right: 0.78vw;
   color: #888;
   cursor: pointer;
 }
@@ -129,5 +130,5 @@
   border: none;
   color: #fff;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 0.94vw;
 }
