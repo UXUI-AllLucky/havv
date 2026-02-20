@@ -8,6 +8,7 @@ const Chat = () => {
         user: '왕티즈',
         text: '대한민국 화이팅',
         image: '/images/dog.png'
+        
     });
 
     return (
