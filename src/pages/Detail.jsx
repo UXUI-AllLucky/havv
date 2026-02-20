@@ -21,12 +21,6 @@ const channelsInfo = {
   SBS: { logo: '/images/sbs.svg', videoId: 'sDawO6w8bd4' },
 };
 
-const handleChannelChange = (channel) => {
-  setActiveChannel(channel);
-  // 이미지 경로가 아닌 비디오 ID를 상태로 업데이트!
-  setVideoId(channelsInfo[channel].videoId);
-};
-
 const Detail = () => {
   const [activeTab, setActiveTab] = useState('선수 소개');
 
@@ -47,15 +41,9 @@ const Detail = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
-  const channels = {
-    KBS: '/images/kbs.svg',
-    MBC: '/images/mbc.svg',
-    SBS: '/images/sbs.svg',
-  };
-
   const handleChannelChange = (channel) => {
     setActiveChannel(channel);
-    setVideoId(channels[channel]);
+    setVideoId(channelsInfo[channel].videoId);
   };
 
   // ... recordData ... (생략 없이 기존 코드 유지)
