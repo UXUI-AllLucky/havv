@@ -87,9 +87,7 @@ const Detail = () => {
               <div
                 style={{
                   position: 'relative',
-                  width: '66.67vw',
-                  height: '37.5vw',
-                  // width: '100%',
+                  width: '100%',
                   aspectRatio: '16/9',
                   borderRadius: '0.63vw',
                   overflow: 'hidden',
