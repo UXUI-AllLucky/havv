@@ -16,20 +16,31 @@ const MatchRecord = ({ recordData }) => {
 
     return (
         <div className="match-record-container">
+
+            {/* 각 세트별 스코어카드 */}
             {sets.map((setNum) => {
-                const data = recordData[setNum]; // 부모로부터 받은 데이터 사용
+                const data = recordData[setNum];
 
                 return (
                     <div key={setNum} className="record-set-block">
-                        <h3 className="record-set-title">SET {setNum}</h3>
-
+                        {/* 각 블록마다 SET 1~4 전체 표시, 현재 세트만 active */}
+                        <div className="record-set-indicator">
+                            {sets.map((s) => (
+                                <span
+                                    key={s}
+                                    className={`record-set-title${s === setNum ? ' active' : ''}`}
+                                >
+                                    SET {s}
+                                </span>
+                            ))}
+                        </div>
                         {/* Point.jsx와 동일한 구조의 Score Card */}
                         <div className="score-card">
                             {/* 대한민국 행 */}
                             <div className="score-row">
                                 <div className="t-info">
-                                    <img src="/images/team/korealogo.jpg" alt="KOR" className="row-flag" />
                                     <span>KOR</span>
+                                    <img src="/images/team/korealogo.jpg" alt="KOR" className="row-flag" />
                                 </div>
                                 <div className="s-point highlight">
                                     {data ? (data.kor.total > data.chn.total ? 2 : data.kor.total === data.chn.total ? 1 : 0) : ''}
@@ -53,8 +64,8 @@ const MatchRecord = ({ recordData }) => {
                             {/* 중국 행 */}
                             <div className="score-row">
                                 <div className="t-info">
-                                    <img src="/images/team/chinalogo.jpg" alt="CHN" className="row-flag" />
                                     <span>CHN</span>
+                                    <img src="/images/team/chinalogo.jpg" alt="CHN" className="row-flag" />
                                 </div>
                                 <div className="s-point highlight">
                                     {data ? (data.chn.total > data.kor.total ? 2 : data.chn.total === data.kor.total ? 1 : 0) : ''}

@@ -9,7 +9,7 @@ const StatCircle = ({ label, value, percent, color }) => (
                 width: '100px',
                 height: '100px',
                 borderRadius: '50%',
-                background: `conic-gradient(${color} ${percent}%, #333 ${percent}%)`,
+                background: `conic-gradient(${color} ${percent}%,  rgba(255, 229, 230, 0.22) ${percent}%)`,
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -20,7 +20,7 @@ const StatCircle = ({ label, value, percent, color }) => (
                 style={{
                     width: '43px',
                     height: '43px',
-                    backgroundColor: '#1a1a1a',
+                    backgroundColor: '#555',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
@@ -210,29 +210,15 @@ const Team = () => {
                             className="team-flag-img"
                         />
                         <div>
-                            <h2 style={{ margin: '0 0 10px 0', fontSize: '28px', color: '#fff' }}>
+                            <h2>
                                 대한민국
                                 <span
-                                    style={{
-                                        fontSize: '16px',
-                                        color: '#aaa',
-                                        fontWeight: 'normal',
-                                        marginLeft: '10px',
-                                    }}
+                                    
                                 >
-                                    (세계랭킹 1위)
+                                    세계랭킹 1위
                                 </span>
                             </h2>
-                            <ul
-                                style={{
-                                    listStyle: 'none',
-                                    padding: 0,
-                                    margin: 0,
-                                    fontSize: '14px',
-                                    color: '#ccc',
-                                    lineHeight: '1.6',
-                                }}
-                            >
+                            <ul className='team-sub' >  
                                 <li>최근 경기: 네덜란드 4:5 대한민국 (준결승)</li>
                                 <li>2020 도쿄 올림픽 여자 단체전 금메달</li>
                                 <li>2016 리우 올림픽 여자 단체전 금메달</li>
@@ -243,7 +229,7 @@ const Team = () => {
                     {/* 1. 감독 정보 Box */}
                     <div
                         style={{
-                            backgroundColor: '#1a1a1a',
+                           
                             borderRadius: '12px',
                             border: '1px solid #333',
                             marginBottom: '20px', // 선수 리스트와 간격
@@ -293,7 +279,7 @@ const Team = () => {
                     {/* 2. 선수 리스트 Box */}
                     <div
                         style={{
-                            backgroundColor: '#1a1a1a',
+                        
                             borderRadius: '12px',
                             border: '1px solid #333',
                             overflow: 'hidden',
@@ -325,42 +311,38 @@ const Team = () => {
                             className="team-flag-img"
                         />
                         <div>
-                            <h2 style={{ margin: '0 0 10px 0', fontSize: '28px', color: '#fff' }}>
+                            <h2 >
                                 중국
                                 <span
-                                    style={{
-                                        fontSize: '16px',
-                                        color: '#aaa',
-                                        fontWeight: 'normal',
-                                        marginLeft: '10px',
-                                        
-                                    }}
+                                   
                                 >
-                                    (세계랭킹 2위)
+                                    세계랭킹 2위
                                 </span>
                             </h2>
-                            <ul
-                                style={{
-                                    listStyle: 'none',
-                                    padding: 0,
-                                    margin: 0,
-                                    fontSize: '14px',
-                                    color: '#ccc',
-                                    lineHeight: '1.6',
-                                    textAlign: 'left',
-                                }}
-                            >
-                                <li>최근 경기: 멕시코 3:5 중국 (준결승)</li>
-                                <li>2020 도쿄 올림픽 여자 단체전 9위</li>
-                                <li>2016 리우 올림픽 여자 단체전 7위</li>
-                                <li>2012 런던 올림픽 여자 단체전 은메달</li>
-                            </ul>
+                             <p>최근 경기
+                                <ul >  
+                               
+                                <li>멕시코 3:5 중국 (준결승)</li>
+                                 </ul>
+                             </p>
+                             
+                                 <p>지난 대회 기록
+                                     <ul>
+                                   <li>2020 도쿄 올림픽 여자 단체전 9위</li>
+                                    <li>2016 리우 올림픽 여자 단체전 7위</li>
+                                    <li>2012 런던 올림픽 여자 단체전 은메달</li>
+                                 </ul>
+                                 </p>
+                                 
+
+                                
+                           
                         </div>
                     </div>
                     {/* 1. 감독 정보 Box */}
                     <div
                         style={{
-                            backgroundColor: '#1a1a1a',
+                         
                             borderRadius: '12px',
                             border: '1px solid #333',
                             marginBottom: '20px',
@@ -410,7 +392,6 @@ const Team = () => {
                     {/* 2. 선수 리스트 Box */}
                     <div
                         style={{
-                            backgroundColor: '#1a1a1a',
                             borderRadius: '12px',
                             border: '1px solid #333',
                             overflow: 'hidden',

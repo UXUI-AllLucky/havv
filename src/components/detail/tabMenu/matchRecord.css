@@ -5,24 +5,68 @@
     padding-bottom: 2.60vw;
 }
 
+/* t-info: point-container와 동일한 스타일 */
+.match-record-container .t-info {
+    width: 10.94vw;
+    padding-left: 1.04vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.63vw;
+    font-weight: bold;
+    font-size: 0.94vw;
+    border-right: 0.0926vw solid rgba(255, 255, 255, 0.20);
+}
+
+/* t-info 텍스트: point-container .ctr과 동일한 스타일 */
+.match-record-container .t-info span {
+    font-size: 1.77vw;
+    color: #f4f4f4;
+    font-weight: 600;
+}
+
+
 /* 개별 세트 블록 */
 .record-set-block {
     margin-bottom: 2.08vw;
     color: #fff;
 }
 
-/* 세트 타이틀 (SET 1, SET 2...) */
+/* 세트 타이틀 바: set-indicator와 동일한 레이아웃 */
+.record-set-indicator {
+    display: flex;
+    padding-left: 0.63vw;
+    gap: 2.71vw;
+    margin-top: 2.9630vw;
+}
+
+/* 세트 타이틀: set-indicator 기본 스타일 */
 .record-set-title {
-    color: #fff;
-    font-size: 1.04vw;
-    font-weight: bold;
+    display: inline-block;
+    font-size: 3.3333vw;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: -0.014vw;
+    margin-left: 0.52vw;
     margin-bottom: 0.78vw;
-    padding-left: 0.52vw;
-    /* 포인트 컬러 */
+}
+
+/* set-indicator .active와 동일한 스타일 */
+.record-set-title.active {
+    color: #fff;
+    font-size: 3.3333vw;
+    font-weight: 800;
+    border-bottom: 0.26vw solid #354ac4;
+    padding-bottom: 0;
 }
 
 /* 스코어 카드 크기 제한 (Point 컴포넌트와 통일감) */
 .match-record-container .score-card {
-    max-width: 46.88vw;
+    background-color: #1a1a1a;
+    width: 100%;
+    padding: 0.63vw 0;
+    border-radius: 1.04vw;
+    border: 0.0926vw solid rgba(255, 255, 255, 0.20);
+    overflow: hidden;
     margin: 0 auto;
 }
