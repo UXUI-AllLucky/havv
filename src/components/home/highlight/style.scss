@@ -14,9 +14,7 @@
     margin-bottom: 1.6667vw;
     margin-right: 0.5208vw;
 
-    h4 {
-      /* Intentionally empty or remove if not needed */
-    }
+
 
     .more {
       display: flex;
@@ -150,6 +148,8 @@
   &.detail-type {
     background-color: transparent;
     position: relative;
+    padding: 0 0 0 5.9259vw;
+    margin: 120px 0 0 0;
 
     .highlight-section {
       border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -158,6 +158,7 @@
       top: 0;
       left: 0;
       width: 100%;
+  
     }
 
     .highlight-title {
@@ -207,6 +208,47 @@
 @media (max-width: 360px) {
   .highlight-section {
     padding: 8.3333vw 0 11.1111vw 4.4444vw;
+    margin-bottom: 10.3333vw;
+
+    &.detail-type {
+      margin: 11.1111vw 0 0 0;
+      padding: 0 0 0 4.4444vw;
+
+      .highlight-title {
+        font-size: 5.5556vw;
+        height: auto;
+        margin-bottom: 4.4444vw;
+      }
+
+      .highlight-container {
+        height: auto;
+
+        .hightlight-card {
+          width: 70vw;
+          height: auto;
+
+          .thumb .img-box {
+            height: 44.4444vw;
+          }
+
+          .thumb .highlight-text strong {
+            font-size: 4.1667vw;
+          }
+
+          .thumb .highlight-text p {
+            font-size: 3.8889vw;
+            color: #e6e6e6;
+          }
+
+          .thumb .highlight_date {
+            font-size: 3.3333vw;
+            color: #7f7f7f;
+            margin-top: 1.1111vw;
+            display: block;
+          }
+        }
+      }
+    }
 
     .highlight-title {
       margin-bottom: 4.4444vw;

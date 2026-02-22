@@ -42,10 +42,10 @@ const Chat = () => {
             <div className="chat-input-area">
                 <div className="my-profile">
                     {/* 내 프로필 이미지 (임시) */}
-                    <img src="/images/dog.png" alt="my-profile" style={{ width: '100%', height: '100%', borderRadius: '50%', objectFit: 'cover' }} />
+                    <img src="/images/dog.png" alt="my-profile" />
                 </div>
                 <div className="input-box">
-                    <input type="text" placeholder="응원의 메시지를 남겨보세요." />
+                    <input type="text" placeholder="응원의 메시지를 남겨보세요." style={{color: '#fff', fontSize: '0.83vw'}}/>
                     <FaRegSmile className="smiley-icon" />
                 </div>
                 <button className="send-btn">

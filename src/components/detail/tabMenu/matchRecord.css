@@ -37,27 +37,36 @@
     display: flex;
     padding-left: 0.63vw;
     gap: 2.71vw;
-    margin-top: 2.9630vw;
+    margin-top: 3.04vw;
+    margin-bottom: 8px;
 }
 
 /* 세트 타이틀: set-indicator 기본 스타일 */
 .record-set-title {
     display: inline-block;
-    font-size: 3.3333vw;
+    font-size: 1.25vw;
     font-weight: 600;
     color: rgba(255, 255, 255, 0.4);
     letter-spacing: -0.014vw;
-    margin-left: 0.52vw;
-    margin-bottom: 0.78vw;
+    
 }
 
 /* set-indicator .active와 동일한 스타일 */
 .record-set-title.active {
     color: #fff;
-    font-size: 3.3333vw;
+    font-size: 1.35vw;
     font-weight: 800;
-    border-bottom: 0.26vw solid #354ac4;
-    padding-bottom: 0;
+    position: relative;
+}
+
+.record-set-title.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 0.26vw;
+    background-color: #354ac4;
 }
 
 /* 스코어 카드 크기 제한 (Point 컴포넌트와 통일감) */
@@ -69,4 +78,68 @@
     border: 0.0926vw solid rgba(255, 255, 255, 0.20);
     overflow: hidden;
     margin: 0 auto;
+}
+
+/* =========================================
+   360px 이하: 모바일 최적화 (Point 컴포넌트와 통일)
+   ========================================= */
+@media (max-width: 360px) {
+    .match-record-container {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .record-set-block {
+        max-width: 100%;
+        margin: 0 auto 5.5556vw;
+        background-color: rgba(255, 255, 255, 0.10);
+        padding: 2.7778vw;
+        border-radius: 2.7778vw;
+    }
+
+    .record-set-indicator {
+        font-size: 2.7778vw;
+        gap: 4.1667vw;
+        margin-top: 1.3889vw;
+        margin-bottom: 2.7778vw;
+        padding-left: 0;
+        justify-content: flex-start;
+    }
+
+    .record-set-title {
+        font-size: 2.7778vw;
+    }
+
+    .record-set-title.active {
+        font-size: 2.7778vw;
+        font-weight: 800;
+    }
+
+    .record-set-title.active::after {
+        height: 0.5556vw;
+        bottom: -0.5556vw;
+    }
+
+    .match-record-container .score-card {
+        width: 100%;
+        border-radius: 2.7778vw;
+        padding: 0;
+    }
+
+    .match-record-container .t-info {
+        width: 13.6111vw;
+        padding-left: 1.3889vw;
+        font-size: 3.3333vw;
+        gap: 1.3889vw;
+    }
+
+    .match-record-container .t-info span {
+        font-size: 3.0556vw;
+    }
+
+    .match-record-container .row-flag {
+        width: 4.1667vw !important;
+        height: 3.0092vw !important;
+        border-radius: 0.5556vw;
+    }
 }

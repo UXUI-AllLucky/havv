@@ -3,7 +3,18 @@ import './style.css'; // 기존 점수판 스타일 파일
 
 // Detail에서 넘겨준 activeTab, setActiveTab, 그리고 recordData를 받아옵니다.
 const Point = ({ activeTab, setActiveTab, recordData }) => {
-  const tabs = ['선수 소개', '팀 소개', '경기 상황', '경기 기록'];
+  const [isMobile, setIsMobile] = React.useState(window.innerWidth <= 360);
+
+  React.useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 360);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const tabs = isMobile
+    ? ['채팅', '선수 소개', '팀 소개', '경기 상황', '경기 기록']
+    : ['선수 소개', '팀 소개', '경기 상황', '경기 기록'];
+
   // 세트 탭 상태 관리 (기본값: 2세트)
   const [activeSet, setActiveSet] = React.useState(2);
 

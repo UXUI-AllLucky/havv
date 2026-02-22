@@ -42,10 +42,10 @@
 .chat-messages {
   flex: 1;
   overflow: hidden;
-  padding: 0.4688vw 0.2604vw;
+  padding: 0.9988vw 0.2604vw;
   display: flex;
   flex-direction: column;
-  gap: 0.6250vw;
+  gap: 0.5650vw;
 }
 
 .message-item {
@@ -55,7 +55,11 @@
   align-items: center;
   gap: 0.63vw;
 }
-
+.my-profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .message-item .profile-img {
   width: 1.8750vw;
   height: 1.8750vw;
@@ -85,7 +89,7 @@ margin-right: 0.63vw;
 
 /* 입력창 영역 */
 .chat-input-area {
-  padding: 0.42vw 0.47vw;
+  padding: 0  0.47vw;
   border-top: 0.052vw solid #333;
   background-color: #222;
   display: flex;
@@ -94,14 +98,15 @@ margin-right: 0.63vw;
 }
 
 .chat-input-area .my-profile {
-  width: 1.67vw;
-  height: 1.67vw;
+ width: 3.3333vw;
+height: 3.3333vw;
   border-radius: 50%;
-  background-color: #555;
+  object-fit: cover;
 }
 
 
 .input-box {
+  
   flex: 1;
   position: relative;
   display: flex;
@@ -110,25 +115,107 @@ margin-right: 0.63vw;
 
 .input-box input {
   width: 100%;
-  padding: 0.52vw 2.08vw 0.52vw 0.78vw;
+  padding: 0.7407vw 2.08vw 0.7407vw 0.78vw;
   border-radius: 1.04vw;
-  background-color: #333;
+  background-color: rgba(255, 255, 255, 0.10);
   border: none;
   color: #fff;
   outline: none;
 }
 
 .input-box .smiley-icon {
+   font-size: 0.94vw;
   position: absolute;
   right: 0.78vw;
-  color: #888;
+  color: #fff;
   cursor: pointer;
+ 
 }
 
 .send-btn {
   background: none;
-  border: none;
   color: #fff;
   cursor: pointer;
   font-size: 0.94vw;
+  border: none;
+  padding-top: 0.2778vw;
+}
+/* =========================================
+   모바일 반응형 (Max-width: 360px)
+   ========================================= */
+@media (max-width: 360px) {
+  .chat-container {
+    width: 100%; /* tab-content 너비에 가득 차도 됨 */
+    aspect-ratio: 4 / 5; /* 비율 유지 (높이 조절) */
+    border-radius: 2.7778vw;
+    border-width: 0.2778vw;
+  }
+
+  .chat-header {
+    padding: 2.7778vw 4.1667vw;
+  }
+
+  .chat-header .left {
+    font-size: 3.3333vw;
+    gap: 1.3889vw;
+  }
+
+  .chat-header .title {
+    font-size: 3.8889vw;
+  }
+
+  .chat-header .icon {
+    font-size: 4.4444vw;
+  }
+
+  .chat-messages {
+    padding: 4.1667vw 2.7778vw;
+    gap: 2.7778vw;
+  }
+
+  .message-item {
+    height: auto;
+    min-height: 8.3333vw;
+    padding: 0 2.7778vw;
+    gap: 2.7778vw;
+  }
+
+  .message-item .profile-img {
+    width: 6.6667vw;
+    height: 6.6667vw;
+  }
+
+  .message-content .user-name {
+    font-size: 3.3333vw;
+    margin-right: 2.7778vw;
+  }
+
+  .message-content .text {
+    font-size: 3.3333vw;
+  }
+
+  .chat-input-area {
+    padding: 2.7778vw;
+    gap: 2.7778vw;
+  }
+
+  .chat-input-area .my-profile {
+    width: 8.3333vw;
+    height: 8.3333vw;
+  }
+
+  .input-box input {
+    padding: 2.2222vw 8.3333vw 2.2222vw 4.1667vw;
+    border-radius: 4.1667vw;
+    font-size: 3.3333vw !important; /* 인라인 스타일 덮어쓰기 위해 !important */
+  }
+
+  .input-box .smiley-icon {
+    font-size: 4.4444vw;
+    right: 2.7778vw;
+  }
+
+  .send-btn {
+    font-size: 4.4444vw;
+  }
 }

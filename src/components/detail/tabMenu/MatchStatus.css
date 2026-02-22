@@ -125,25 +125,62 @@
    ========================================= */
 @media (max-width: 768px) {
     .match-status-container {
-        padding: 20px;
+        padding: 5.5556vw;
     }
 
     .match-dashboard {
         flex-direction: column;
-        /* 세로 배치 */
         align-items: center;
-        gap: 40px;
+        gap: 11.1111vw;
     }
 
     .team-card {
         width: 100%;
-        max-width: 400px;
-        /* 너무 커지지 않게 제한 */
+        max-width: none;
     }
 
     .target-area-box {
-        padding: 15px;
+        padding: 4.1667vw;
+    }
+}
+
+@media (max-width: 360px) {
+    .match-set-title {
+        font-size: 3.8889vw;
+        margin-bottom: 2.7778vw;
     }
 
-    /* 화살표 글씨 크기 조정 */
+    .team-info-header {
+        font-size: 3.8889vw;
+        margin-bottom: 2.7778vw;
+        gap: 2.7778vw !important;
+    }
+
+    .team-info-header img {
+        width: 11.1111vw !important;
+    }
+
+    .target-area-box {
+        padding: 2.7778vw;
+        border-radius: 2.2222vw 2.2222vw 0 0;
+    }
+
+    .player-selection-tabs {
+        border-radius: 0 0 2.2222vw 2.2222vw;
+    }
+
+    .player-tab-btn {
+        padding: 2.7778vw 0;
+        font-size: 3.3333vw;
+    }
+
+    .wind-indicator {
+        top: 2.7778vw;
+        left: 2.7778vw;
+        font-size: 2.7778vw;
+    }
+
+    .wind-indicator .arrow {
+        font-size: 3.8889vw;
+    }
 }

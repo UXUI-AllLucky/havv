@@ -3,13 +3,12 @@
 /* 기본 데스크탑 레이아웃 (Grid) */
 .detail-grid-container {
   display: grid;
-  max-width: 88.75vw;
   width: 100%;
-  
   grid-template-columns: 3.5fr 1fr;
   gap: 1.04vw;
   margin: 1.67vw auto 0;
   align-items: start;
+  box-sizing: border-box;
 }
 
 .video-section-wrapper {
@@ -63,9 +62,24 @@
 
   .detail-grid-container {
     grid-template-columns: 1fr;
+    margin-top: 2.7778vw;
+    gap: 0;
   }
 
   .detail-controls-container {
     grid-template-columns: 1fr;
+    margin-top: 1.3889vw;
+    margin-bottom: 2.7778vw;
+  }
+
+  .video-title {
+    font-size: 3.8889vw;
+    margin-right: 0;
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  .channel-buttons {
+    display: none; /* Screenshot suggests channel buttons might be hidden or moved */
   }
 }

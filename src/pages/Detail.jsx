@@ -66,15 +66,14 @@ const Detail = () => {
       style={{
         backgroundColor: '#151515',
         minHeight: '100vh',
-        padding: '5.21vw 1.04vw 1.04vw',
+        boxSizing: 'border-box',
       }}
     >
       <div
         style={{
           width: '100%',
-          maxWidth: '89.58vw',
           margin: '0 auto',
-          padding: '0 2.08vw',
+          padding: '5.21vw 5.9259vw 0',
           boxSizing: 'border-box',
         }}
       >
@@ -172,16 +171,17 @@ const Detail = () => {
 
         {/* 하단: 탭별 가변 콘텐츠 (컴포넌트 이름 수정) */}
         <div className="tab-content" style={{ marginTop: '1.56vw' }}>
+          {activeTab === '채팅' && <Chat />}
           {activeTab === '선수 소개' && <Player />}
           {activeTab === '팀 소개' && <Team />}
           {activeTab === '경기 상황' && <MatchStatus />}
           {activeTab === '경기 기록' && <MatchRecord recordData={recordData} />}
         </div>
 
-        {/* 하단: 하이라이트 섹션 (모든 탭에서 보임) */}
-        {/* 하단: 하이라이트 섹션 (모든 탭에서 보임) */}
-        <Highlight highlightVideos={highlightData} className="detail-type" />
       </div>
+
+      {/* 하단: 하이라이트 섹션 — 왼쪽만 패딩 정렬, 오른쪽은 화면 끝까지 */}
+      <Highlight highlightVideos={highlightData} className="detail-type" />
     </div>
   );
 };
