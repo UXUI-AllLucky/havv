@@ -62,7 +62,7 @@
 
   .detail-grid-container {
     grid-template-columns: 1fr;
-    margin-top: 2.7778vw;
+    margin-top: 10.7778vw;
     gap: 0;
   }
 
@@ -72,7 +72,14 @@
     margin-bottom: 2.7778vw;
   }
 
+  .video-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.1111vw;
+  }
+
   .video-title {
+    flex: 1;
     font-size: 3.8889vw;
     margin-right: 0;
     white-space: normal;
@@ -80,6 +87,44 @@
   }
 
   .channel-buttons {
-    display: none; /* Screenshot suggests channel buttons might be hidden or moved */
+    display: flex;
+    margin-top: 3.3333vw;
+  }
+
+  .channel-buttons button {
+    width: 10% !important; 
+    margin-right: 3.3333vw;
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  
+  .channel-buttons button:last-child {
+    margin-right: 0;
+    width: 8.5% !important;
+  }
+
+  /* Ensure the inside elements don't break the layout */
+  .channel-buttons button > div {
+    padding-bottom: 0.8vw !important;
+    border-bottom: 0.2vw solid transparent !important;
+    transition: all 0.3s ease;
+  }
+
+  .channel-buttons button.active > div {
+    border-bottom: 0.5vw solid #354AC4 !important;
+  }
+
+  .channel-buttons button img {
+    height: 100% !important;
+    width: auto !important;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+  }
+
+  .channel-buttons button.active img {
+    opacity: 1;
   }
 }

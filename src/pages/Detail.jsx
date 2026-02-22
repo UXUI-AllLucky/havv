@@ -116,6 +116,7 @@ const Detail = () => {
                   return (
                     <button
                       key={channel}
+                      className={isActive ? 'active' : ''}
                       onClick={() => handleChannelChange(channel)}
                       style={{
                         // 1. 버튼 자체는 클릭하기 좋게 넓은 패딩 영역을 유지합니다.

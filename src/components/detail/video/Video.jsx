@@ -8,6 +8,9 @@ const Video = ({ videoId, startTime }) => {
         playerVars: {
             autoplay: 1, // 자동재생 (선택사항)
             start: startTime, // 시작 시간 (초 단위)
+            rel: 0, // 추천 영상을 현재 채널의 영상으로 제한
+            modestbranding: 1, // 유튜브 로고 숨기기 (컨트롤 바)
+            mute: 1, // 자동 재생을 위해 음소거 필수
         },
     };
 
